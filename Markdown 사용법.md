@@ -90,7 +90,9 @@
    = C++
    
 </pre>
-## 3.1 Hr
+
+3.1 Hr
+
 <pre>
   <code>
     * * *
@@ -101,5 +103,11 @@
    </code>
  </pre>
  
+  * * *
+    ***
+    *****
+    - - - 
+    -------------------
+    
  * 참조
  github:[Github][Githublink] "https://gist.github.com/ihoneymon/652be052a0727ad59601"
