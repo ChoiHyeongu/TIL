@@ -26,5 +26,9 @@
 3. 설치가 완료되면 계정과 비밀번호 입력
 
 #### 4-3. 기본 설정
-1. sudo apt-get update
-2. sudo apt-get upgrade
+<pre>
+  <code>
+    $sudo apt-get update 
+    $sudo apt-get upgrade
+  </code>
+</pre>
