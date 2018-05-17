@@ -107,5 +107,10 @@
 *****
 - - -
     
+## 3. 코드출력
+
+```<pre><code></code></pre>```를 사용
+
+
  * 참조
  github:[Github][Githublink] "https://gist.github.com/ihoneymon/652be052a0727ad59601"
