@@ -32,3 +32,9 @@
     $sudo apt-get upgrade
   </code>
 </pre>
+
+## 5. WSL로 사용할 수 있는 것
+1. Ubuntu
+2. Debian
+3. Kali
+4. Suse
