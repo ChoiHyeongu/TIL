@@ -1,0 +1,22 @@
+
+
+.head-banner-wrapper{
+  background:#2d302a;
+  width: 100%;
+  height: 50px;
+}
+
+ul#navi{
+  width: 200px;
+  text-indent: 10px;
+}
+
+ul#navi, ul#navi ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li.group{
+  margin-bottom: 10px;
+}
