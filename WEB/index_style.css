@@ -9,13 +9,12 @@ body {
 .header {
 	padding:40px 10px;
 	text-align: center;
-	background: #eee;
+	background: #333;
 	margin-bottom: 20px;
 }
 .logo {
 	font-size: 2em;
 	font-weight: bold;
-	background: #5457de;
 	color: #fff;
 	display: inline-block;
 	padding: 0 8px;
@@ -25,6 +24,25 @@ body {
 	zoom: 1;
 	background: url('bg.png') repeat-y;
 }
+.upper-menu {
+	list-style: none;
+	background-color: #333;
+}
+
+.upper-link {
+	text-decoration: none;
+	color: #fff;
+}
+
+.upper-link:hover {
+	background: #5457de;
+}
+
+.nav-menu {
+	display: inline;
+	padding-left: 100px;
+}
+
 .nav {
 	float: left;
 	width: 150px;
