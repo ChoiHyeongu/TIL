@@ -94,4 +94,3 @@ public class signupPage extends AppCompatActivity {
         task.execute(Id, Pw);
     }
 }
-}

@@ -3,29 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signupPage"
+    tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/newID"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="ID"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/newPW"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="PW"
-        android:ems="10" />
+        android:text="버튼을 눌러 부분 화면을 추가하세요."
+        android:textSize="20dp"/>
 
     <Button
-        android:text="SUBMIT"
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="submitClick" />
+        android:text="추가하기"/>
 
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    </LinearLayout>
 </LinearLayout>
