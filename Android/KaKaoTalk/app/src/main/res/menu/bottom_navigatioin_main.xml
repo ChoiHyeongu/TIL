@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".FriendListActivity">
+
+
+    <item
+        android:enabled="true"
+        android:icon="@drawable/user"
+        android:id="@+id/action_profile"
+        android:title="@string/friend" />
+
+    <item
+        android:enabled="true"
+        android:icon="@drawable/chat"
+        android:id="@+id/action_chat"
+        android:title="@string/chat" />
+
+    <item
+        android:enabled="true"
+        android:icon="@drawable/channel"
+        android:id="@+id/action_channel"
+        android:title="@string/channel" />
+
+    <item
+        android:enabled="true"
+        android:icon="@drawable/more"
+        android:id="@+id/action_more"
+        android:title="@string/etc" />
+
+
+</menu>
