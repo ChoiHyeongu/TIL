@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KaKaoTalk</string>
+    <string name="friend">친구</string>
+    <string name="setting">설정</string>
+    <string name="edit">편집</string>
+
+</resources>
