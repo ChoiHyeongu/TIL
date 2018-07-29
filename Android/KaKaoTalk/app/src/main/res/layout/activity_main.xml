@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".FriendListActivity">
+    android:orientation="vertical" >
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -28,6 +28,7 @@
                 android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/nowView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -48,26 +49,13 @@
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/friend" />
-
-            <ListView
-                android:id="@+id/profileList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ListView>
-
-        </LinearLayout>
+    </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigation"
@@ -77,6 +65,6 @@
         app:itemBackground="@color/white2"
         app:itemIconTint="@drawable/nav_item_color_state"
         app:itemTextColor="@drawable/nav_item_color_state"
-        app:menu="@menu/bottom_navigatioin_main"/>
+        app:menu="@menu/bottom_navigatioin_main" />
 
 </LinearLayout>
