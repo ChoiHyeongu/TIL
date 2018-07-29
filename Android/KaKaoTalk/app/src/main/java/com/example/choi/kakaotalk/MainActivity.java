@@ -1,5 +1,6 @@
 package com.example.choi.kakaotalk;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -14,26 +15,30 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView profileList;
-    profileListAdapter profileListAdapter;
-    ArrayList<profileList> profileListArrayList;
     Fragment friendFragment;
+    ListView profileList;
     Fragment chatFragment;
     Fragment channelFragment;
     Fragment moreFragment;
+
+    Context context;
+
+    FriendAdapter friendAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //프래그먼트
+        context = getApplicationContext();
+
         friendFragment = new FriendFragment();
         chatFragment = new ChatFragment();
         channelFragment = new ChannelFragment();
         moreFragment = new MoreFragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.container, friendFragment).commit();
+        addFriendList();
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
@@ -45,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_profile:
                         Toast.makeText(getApplicationContext(), "친구 메뉴", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, friendFragment).commit();
+                        addFriendList();
                         break;
 
                     case R.id.action_chat:
@@ -66,4 +72,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void addFriendList() {
+
+        friendAdapter = new FriendAdapter();
+
+        friendAdapter.addFriend(new FriendItem(R.mipmap.me, "최형우", "KakaoTalk Clone Coding"));
+
+        profileList = (ListView) findViewById(R.id.list);
+        profileList.setAdapter(friendAdapter);
+    }
 }
+
