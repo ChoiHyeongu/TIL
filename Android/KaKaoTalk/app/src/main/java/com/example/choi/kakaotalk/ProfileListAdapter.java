@@ -51,7 +51,7 @@ public class ProfileListAdapter extends BaseAdapter {
             profileImageView.setClipToOutline(true);
             nameTextView = (TextView) convertView.findViewById(R.id.profileName);
             moodTextView = (TextView) convertView.findViewById(R.id.profileMood);
-        }
+        } 
 
         profileImageView.setImageResource(profileItemArrayList.get(position).getProfileImage());
         nameTextView.setText(profileItemArrayList.get(position).getProfileName());

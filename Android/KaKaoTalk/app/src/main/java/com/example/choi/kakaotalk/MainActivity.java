@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     Fragment channelFragment;
     Fragment moreFragment;
 
+    TextView nowFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         chatFragment = new ChatFragment();
         channelFragment = new ChannelFragment();
         moreFragment = new MoreFragment();
+
+        nowFragment = findViewById(R.id.nowView);
 
         getSupportFragmentManager().beginTransaction().add(R.id.container, friendFragment).commit();
 
@@ -43,23 +48,23 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_profile:
-                        Toast.makeText(getApplicationContext(), "친구 메뉴", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, friendFragment).commit();
+                        nowFragment.setText(R.string.friend);
                         break;
 
                     case R.id.action_chat:
-                        Toast.makeText(getApplicationContext(), "채팅 메뉴", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, chatFragment).commit();
+                        nowFragment.setText(R.string.chat);
                         break;
 
                     case R.id.action_channel:
-                        Toast.makeText(getApplicationContext(), "채널 메뉴", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, channelFragment).commit();
+                        nowFragment.setText(R.string.channel);
                         break;
 
                     case R.id.action_more:
-                        Toast.makeText(getApplicationContext(), "더보기 메뉴", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, moreFragment).commit();
+                        nowFragment.setText(R.string.edit);
                         break;
                 }
                 return true;

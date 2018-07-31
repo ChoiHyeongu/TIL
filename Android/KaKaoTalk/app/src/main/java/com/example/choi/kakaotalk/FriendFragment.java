@@ -17,7 +17,6 @@ import java.util.ArrayList;
 public class FriendFragment extends Fragment {
 
     ListView profileList;
-    ProfileListAdapter profileListAdapter;
     ArrayList<ProfileItem> profileItemArrayList;
 
     @Nullable
