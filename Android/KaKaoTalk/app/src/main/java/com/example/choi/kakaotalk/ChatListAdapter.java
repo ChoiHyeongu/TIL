@@ -1,6 +1,8 @@
 package com.example.choi.kakaotalk;
 
 import android.content.Context;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,16 +25,11 @@ public class ChatListAdapter extends BaseAdapter{
     TextView roomName;
     TextView curMessage;
     TextView curDate;
-    TextView numberOfMemeber;
+    TextView numberOfMember;
 
-    public ChatListAdapter(Context context, ArrayList<ChatItem> chatItemArrayList, ImageView roomImage, TextView roomName, TextView curMessage, TextView curDate, TextView numberOfMemeber) {
+    public ChatListAdapter(Context context, ArrayList<ChatItem> chatItemArrayList){
         this.context = context;
         this.chatItemArrayList = chatItemArrayList;
-        this.roomImage = roomImage;
-        this.roomName = roomName;
-        this.curMessage = curMessage;
-        this.curDate = curDate;
-        this.numberOfMemeber = numberOfMemeber;
     }
 
     @Override
@@ -59,14 +56,16 @@ public class ChatListAdapter extends BaseAdapter{
             roomName = (TextView) convertView.findViewById(R.id.roomName);
             curMessage = (TextView) convertView.findViewById(R.id.curChatText);
             curDate = (TextView) convertView.findViewById(R.id.curDate);
-            numberOfMemeber = (TextView) convertView.findViewById(R.id.numOfMember);
+            numberOfMember = (TextView) convertView.findViewById(R.id.numOfMember);
         }
 
         roomImage.setImageResource(chatItemArrayList.get(position).getRoomImage());
+        roomImage.setBackground(new ShapeDrawable(new OvalShape()));
+        roomImage.setClipToOutline(true);
         roomName.setText(chatItemArrayList.get(position).getRoomName());
         curMessage.setText(chatItemArrayList.get(position).getCurMessage());
         curDate.setText(chatItemArrayList.get(position).getCurMessageTime());
-        numberOfMemeber.setText(chatItemArrayList.get(position).getNumberOfPeople());
+        numberOfMember.setText(chatItemArrayList.get(position).getNumberOfPeople());
 
         return convertView;
     }

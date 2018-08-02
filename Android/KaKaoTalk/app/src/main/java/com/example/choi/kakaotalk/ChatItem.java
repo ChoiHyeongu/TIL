@@ -5,7 +5,7 @@ public class ChatItem {
     private int roomImage;
     private String roomName;
     private String  curMessage;
-    private int numberOfPeople;
+    private String numberOfPeople;
     private String curMessageTime;
 
     public int getRoomImage() {
@@ -32,11 +32,11 @@ public class ChatItem {
         this.curMessage = curMessage;
     }
 
-    public int getNumberOfPeople() {
+    public String getNumberOfPeople() {
         return numberOfPeople;
     }
 
-    public void setNumberOfPeople(int numberOfPeople) {
+    public void setNumberOfPeople(String numberOfPeople) {
         this.numberOfPeople = numberOfPeople;
     }
 
@@ -48,7 +48,7 @@ public class ChatItem {
         this.curMessageTime = curMessageTime;
     }
 
-    public ChatItem(int roomImage, String roomName, String curMessage, int numberOfPeople, String curMessageTime) {
+    public ChatItem(int roomImage, String roomName, String curMessage, String numberOfPeople, String curMessageTime) {
         this.roomImage = roomImage;
         this.roomName = roomName;
         this.curMessage = curMessage;
