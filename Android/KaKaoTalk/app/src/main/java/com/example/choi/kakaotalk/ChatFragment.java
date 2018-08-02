@@ -31,13 +31,14 @@ public class ChatFragment extends Fragment {
         chatList = (ListView) rootView.findViewById(R.id.chatList);
         chatItemArrayList = new ArrayList<ChatItem>();
 
-        chatItemArrayList.add(new ChatItem(R.mipmap.chu, "추세연", "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", "2", "12:32"));
-        chatItemArrayList.add(new ChatItem(R.mipmap.chu, "추세연", "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", "2", "12:32"));
-        chatItemArrayList.add(new ChatItem(R.mipmap.chu, "추세연", "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", "2", "12:32"));
-        chatItemArrayList.add(new ChatItem(R.mipmap.chu, "추세연", "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", "2", "12:32"));
-        chatItemArrayList.add(new ChatItem(R.mipmap.chu, "추세연", "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", "2", "12:32"));
-        chatItemArrayList.add(new ChatItem(R.mipmap.chu, "추세연", "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", "2", "12:32"));
-        chatItemArrayList.add(new ChatItem(R.mipmap.chu, "추세연", "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ", "2", "12:32"));
+        chatItemArrayList.add(new ChatItem(R.mipmap.moonbyul, "문별", "last Messsge", "2", "12:32"));
+        chatItemArrayList.add(new ChatItem(R.mipmap.moonbyul, "문별", "last Messsge", "2", "12:32"));
+        chatItemArrayList.add(new ChatItem(R.mipmap.moonbyul, "문별", "last Messsge", "2", "12:32"));
+        chatItemArrayList.add(new ChatItem(R.mipmap.moonbyul, "문별", "last Messsge", "2", "12:32"));
+        chatItemArrayList.add(new ChatItem(R.mipmap.moonbyul, "문별", "last Messsge", "2", "12:32"));
+        chatItemArrayList.add(new ChatItem(R.mipmap.moonbyul, "문별", "last Messsge", "2", "12:32"));
+        chatItemArrayList.add(new ChatItem(R.mipmap.moonbyul, "문별", "last Messsge", "2", "12:32"));
+
         chatList.setAdapter(new ChatListAdapter(getActivity(), chatItemArrayList));
 
         return rootView;
