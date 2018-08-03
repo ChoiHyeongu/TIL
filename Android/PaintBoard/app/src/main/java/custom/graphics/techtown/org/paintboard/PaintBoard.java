@@ -1,64 +1,83 @@
 package custom.graphics.techtown.org.paintboard;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.support.annotation.Nullable;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
 public class PaintBoard extends View {
 
-    int lastX;
-    int lastY;
-    Paint mPaint;
+    Paint paint;
+    Bitmap mBitmap;
     Canvas mCanvas;
 
-    public PaintBoard(Context context){
+    float oldX;
+    float oldY;
+
+    public PaintBoard(Context context) {
         super(context);
+        init(context);
+    }
 
-        // create a new paint object
-        this.mPaint = new Paint();
-        this.mPaint.setColor(Color.BLACK);
+    public PaintBoard(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        init(context);
+    }
 
-        this.lastX = -1;
-        this.lastY = -1;
+    private void init(Context context) {
+        paint = new Paint();
+        paint.setColor(Color.BLACK);
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+
+        mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        mCanvas = new Canvas();
+        mCanvas.setBitmap(mBitmap);
+        mCanvas.drawColor(Color.WHITE);
+
+    }
+
+    public void setColor(int color){
+        paint.setColor(color);
+    }
+
+    public void setLineWidth(float lineWidth){
+        paint.setStrokeWidth(lineWidth);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        canvas.drawBitmap(mBitmap, 0, 0, null);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
-        int X = (int) event.getX();
-        int Y = (int) event.getY();
-        mCanvas = new Canvas();
 
-        switch (action) {
-            case MotionEvent.ACTION_UP:
-                lastX = -1;
-                lastY = -1;
-                break;
+        int curX = (int) event.getX();
+        int curY = (int) event.getY();
 
-            case MotionEvent.ACTION_DOWN:
-                if (lastX != -1) {
-                    if (X != lastX || Y != lastY) {
-                        mCanvas.drawLine(lastX, lastY, X, Y, mPaint);
-                    }
-                }
+        if (action == MotionEvent.ACTION_DOWN) {
+            oldX = curX;
+            oldY = curY;
+        } else if (action == MotionEvent.ACTION_MOVE) {
+            if (oldX > 0 || oldY > 0){
+                mCanvas.drawLine(oldX, oldY, curX, curY, paint);
+            }
+            oldX = curX;
+            oldY = curY;
+        } else if (action == MotionEvent.ACTION_MOVE) {
 
-                lastX = X;
-                lastY = Y;
-
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                if (lastX != -1) {
-                    mCanvas.drawLine(lastX, lastY, X, Y, mPaint);
-                }
-
-                lastX = X;
-                lastY = Y;
-
-                break;
         }
 
         invalidate();
