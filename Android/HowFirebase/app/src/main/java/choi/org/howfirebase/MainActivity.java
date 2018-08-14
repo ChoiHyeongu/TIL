@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -32,10 +33,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
 
+    private EditText editTextEmail;
+    private EditText editTextPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mAuth = FirebaseAuth.getInstance();
 
         // Google 로그인 옵션 객체 생
@@ -46,14 +51,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        SignInButton button = (SignInButton) findViewById(R.id.login);
-        button.setOnClickListener(new View.OnClickListener() {
+        SignInButton googleLogin = (SignInButton) findViewById(R.id.googleLogin);
+        googleLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(signInIntent, RC_SIGN_IN);
-                Intent menuIntent = new Intent(getApplicationContext(), MenuActivity.class);
-                startActivityForResult(menuIntent, 101);
+            }
+        });
+
+        editTextEmail = (EditText) findViewById(R.id.emailEditText);
+        editTextPassword = (EditText) findViewById(R.id.passwordEditText);
+
+        Button emailLogin = (Button) findViewById(R.id.loginButton);
+        emailLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createUser(editTextEmail.getText().toString(), editTextPassword.getText().toString());
             }
         });
     }
@@ -97,5 +111,22 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    private void createUser(String email, String password){
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(MainActivity.this, "회원가입 성공", Toast.LENGTH_LONG).show();
+                        }
+
+                        // ...
+                    }
+                });
     }
 }
