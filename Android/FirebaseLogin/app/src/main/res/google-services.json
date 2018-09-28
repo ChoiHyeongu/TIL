@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "25197385596",
+    "firebase_url": "https://mooding-37b81.firebaseio.com",
+    "project_id": "mooding-37b81",
+    "storage_bucket": "mooding-37b81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25197385596:android:8d33087d3ef71b22",
+        "android_client_info": {
+          "package_name": "com.example.motivation.mooding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25197385596-o1el6rt6koebk6q33j8tlmchid63gv3a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.motivation.mooding",
+            "certificate_hash": "faeb3460c734fe1e309c35425c4e7ad46e7b4db0"
+          }
+        },
+        {
+          "client_id": "25197385596-segevocg1qg5jc86enpd218ua0b36nld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSg0TN8B0eq7oAc2Jc5AdERF5sFVL2UFc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25197385596-segevocg1qg5jc86enpd218ua0b36nld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

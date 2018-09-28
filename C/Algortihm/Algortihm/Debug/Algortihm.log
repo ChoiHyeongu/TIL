@@ -1,0 +1,28 @@
+﻿  pch.cpp
+  List_LinkedList.c
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(49): warning C4020: 'SLL_GetNodeCount': 실제 매개 변수가 너무 많습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(64): warning C4020: 'SLL_GetNodeCount': 실제 매개 변수가 너무 많습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(79): warning C4020: 'SLL_GetNodeCount': 실제 매개 변수가 너무 많습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(99): warning C4129: 'P': 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(100): warning C4020: 'SLL_GetNodeCount': 실제 매개 변수가 너무 많습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(108): warning C4129: 'A': 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(116): warning C4020: 'SLL_GetNodeCount': 실제 매개 변수가 너무 많습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(127): warning C4129: 'P': 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(128): warning C4020: 'SLL_GetNodeCount': 실제 매개 변수가 너무 많습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(163): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(166): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(175): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(184): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(188): warning C4133: '!=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(189): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(201): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(206): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(209): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(220): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(232): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(238): warning C4133: '!=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(239): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(240): warning C4133: '==': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(241): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+c:\users\motivation\desktop\programming\algortihm\algortihm\list_linkedlist.c(242): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+  Algortihm.vcxproj -> C:\Users\Motivation\Desktop\Programming\Algortihm\Debug\Algortihm.exe
