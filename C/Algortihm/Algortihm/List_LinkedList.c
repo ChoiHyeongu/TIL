@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 typedef int ElementType;
 
 typedef struct tagNode {
 	ElementType Data;	/* 데이터 필드 */
-	struct Node* NextNode; /* 다음 노드를 가르키는 포인터 */
+	struct tagNode* NextNode; /* 다음 노드를 가르키는 포인터 */
 } Node;
 
 /* 함수 원형 선언*/
