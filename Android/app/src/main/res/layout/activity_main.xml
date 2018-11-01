@@ -13,28 +13,48 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/main_useridEdit"
+            android:id="@+id/main_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User ID" />
+            android:hint="Item" />
 
         <EditText
-            android:id="@+id/main_usernameEdit"
+            android:id="@+id/main_item_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User name" />
+            android:hint="content" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/main_button"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="INPUT" />
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/main_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INPUT" />
+
+        <EditText
+            android:hint="Find"
+            android:id="@+id/main_find"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="OUTPUT"
+            android:id="@+id/main_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/main_outputText"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 
 </LinearLayout>
