@@ -5,19 +5,10 @@
     android:orientation="vertical">
 
     <TextView
-        android:textAlignment="center"
         android:id="@+id/item_title"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:text="TItle"
+        android:textAlignment="center"
         android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/item_content"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:text="Content"
-        android:textSize="30sp" />
-
 </LinearLayout>

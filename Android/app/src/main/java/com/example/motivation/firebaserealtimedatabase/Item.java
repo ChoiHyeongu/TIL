@@ -2,14 +2,13 @@ package com.example.motivation.firebaserealtimedatabase;
 
 public class Item {
 
-    String title;
-    String content;
+    private String title;
 
-    public Item(){}
+    public Item() {
+    }
 
-    public Item(String title, String content) {
+    public Item(String title) {
         this.title = title;
-        this.content = content;
     }
 
     public String getTitle() {
@@ -18,13 +17,5 @@ public class Item {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 }
