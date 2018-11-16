@@ -29,7 +29,7 @@
     <ClCompile Include="List_LinkedList.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="List_LinkedList_Practice.cpp">
+    <ClCompile Include="List_DoublyLinkedList.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
