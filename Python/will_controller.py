@@ -158,5 +158,6 @@ def getNunchukStick(wii):
 if __name__ == "__main__":
     wii = setup()
     while True:
-        getButtons(wii)
+        getAcc(wii)
+        getNunchuk(wii)
 
