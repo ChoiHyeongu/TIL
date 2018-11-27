@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
- 
-# based on Raspberry Pi Spi source
-# http://www.raspberrypi-spy.co.uk/?p=1101
-
 import cwiid
 import time
+import pygame
 
 def setup():
 
@@ -22,7 +18,10 @@ def setup():
     print ("Press PLUS + MINUS to terminate")
 
     # Set areas for Wii Mote to process
-    wii.rpt_mode = cwiid.RPT_BTN
+    remote = wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_ACC
+    nunchuk = wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_NUNCHUK
+
+    print (remote, nunchuk)
 
     wii.led = setLedNum()
     wii.rumble = True
@@ -48,116 +47,70 @@ def setLedNum(led = None, bin = None):
         led = bin
     return led
 
- 
-def getButtons(wii):
-    button_delay = 0.1
-    buttons = wii.state['buttons']
- 
-    # Press Plus and Minus
-    # Terminate after rumble
-    if (buttons - cwiid.BTN_PLUS - cwiid.BTN_MINUS == 0):
-        print ('\nStop connecting...')
-        wii.rumble = 1
-        time.sleep(1)
-        wii.rumble = 0
-        exit(wii)
- 
-    # Check button pressed
-    # wii.state['buttons']and button number(constants)
-    # Processing by bitwise AND 
-    if (buttons & cwiid.BTN_LEFT):
-        print ('Left button pressed')
-        time.sleep(button_delay)
- 
-    if(buttons & cwiid.BTN_RIGHT):
-        print ('Right button pressed')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_UP):
-        print ('Up button pressed')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_DOWN):
-        print ('Down button pressed')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_1):
-        print ('Button 1')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_2):
-        print ('Button 2')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_A):
-        print ('Button A')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_B):
-        print ('Button B')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_HOME):
-        print ('Home button')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_MINUS):
-        print ('Minus button')
-        time.sleep(button_delay)
- 
-    if (buttons & cwiid.BTN_PLUS):
-        print ('Plus button')
-        time.sleep(button_delay)    
- 
 def getAcc(wii):
-    acc_delay = 0.1
-    wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_ACC
-    acc = wii.state['acc']
-    print ("acc=",acc)
-    time.sleep(acc_delay) 
- 
-def getIR(wii):
-    ir_delay = 0.1
-    wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_IR
-    ir = wii.state['ir_src']
-    print ("ir=",ir)
-    time.sleep(ir_delay)   
- 
-def getNunchuk(wii):
-    nunchuk_delay = 0.1
-    wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_NUNCHUK
-    nunchuk = wii.state['nunchuk']
-    print ("Nunchuk =",nunchuk)
-    time.sleep(nunchuk_delay)     
- 
-def getNunchukAcc(wii):
-    nunchuk_delay = 0.1
-    wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_NUNCHUK
-    nunchuk = wii.state['nunchuk']['acc']
-    print ("Nunchuk Acc =",nunchuk)
-    time.sleep(nunchuk_delay)
- 
-def getNunchukButtons(wii):
-    nunchuk_delay = 0.1
-    wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_NUNCHUK
-    nunchuk = wii.state['nunchuk']['buttons']
-    if (nunchuk & cwiid.NUNCHUK_BTN_C):
-        print ('Nunchuk button C')
-        time.sleep(nunchuk_delay)
-    if (nunchuk & cwiid.NUNCHUK_BTN_Z):
-        print ('Nunchuk button Z')
-        time.sleep(nunchuk_delay)   
- 
-def getNunchukStick(wii):
-    nunchuk_delay = 0.1
-    wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_NUNCHUK
-    nunchuk = wii.state['nunchuk']['stick']
-    print ('Nunchuk Stick =', nunchuk)
-    time.sleep(nunchuk_delay) 
- 
+    acc_delay = 0.3
+    
+    wii.rpt_mode = cwiid.RPT_BTN | cwiid.RPT_ACC | cwiid.RPT_NUNCHUK
+    
+    nunchuk_acc = wii.state['nunchuk']['acc']
+    remote_acc = wii.state['acc']
+
+    nunchuk_accList = list(nunchuk_acc)
+    nunchuk_x = nunchuk_accList[0]
+    nunchuk_y = nunchuk_accList[1]
+    nunchuk_z = nunchuk_accList[2]
+
+    remote_accList = list(remote_acc)
+    remote_x = remote_accList[0]
+    remote_y = remote_accList[1]
+    remote_z = remote_accList[2]
+
+    if remote_z < 120 and nunchuk_z < 100:
+        soundPlay(3)
+        print("Snare and Closed Hi-Hat")
+        time.sleep(acc_delay)
+
+    elif  remote_z < 120:
+        soundPlay(1)
+        print("Snare")
+        print("Remote : X = {} Y = {} Z = {}".format(remote_x,remote_y,remote_z))
+    
+    elif  nunchuk_z < 100 or nunchuk_z > 200 :
+        soundPlay(2)
+        print("Closed Hi-Hat")
+        print("Nunchuk : X = {} Y = {} Z = {}".format(nunchuk_x,nunchuk_y,nunchuk_z))
+        
+    
+    #print("Nunchuk : X = {} Y = {} Z = {}".format(nunchuk_x,nunchuk_y,nunchuk_z))
+    #print("Remote : X = {} Y = {} Z = {}".format(remote_x,remote_y,remote_z))
+
+    
+    time.sleep(acc_delay)
+
+def soundPlay(num):
+
+    sound_files = ["/home/pi/Desktop/Programming/snare.wav",
+                   "/home/pi/Desktop/Programming/close_hihat.wav"]
+                   
+    
+    if num == 1:
+        print ("Snare")
+        pygame.mixer.music.load(sound_files[0])
+        pygame.mixer.music.play()
+    elif num == 2:
+        print ("HiHat")
+        pygame.mixer.music.load(sound_files[1])
+        pygame.mixer.music.play()
+    elif num == 3:
+        both = [pygame.mixer.Sound(f) for f in sound_files]
+        for s in both:
+            pygame.mixer.find_channel().play(s)
+
 if __name__ == "__main__":
     wii = setup()
+    pygame.init()
+
     while True:
         getAcc(wii)
-        getNunchuk(wii)
-
+    
+        
