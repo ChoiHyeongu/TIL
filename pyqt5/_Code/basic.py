@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 
 import sys
+from modules import UI
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-from PyQt5 import uic
 
-ui_calculator = '../_uiFiles/calculator.ui'
-
-class MainDialog(QDialog):
+class MainDialog(QDialog, UI.Ui_Main):
     def __init__(self):
-        QDialog.__init__(self, None)
-        uic.loadUi(ui_calculator, self)
+        QDialog.__init__(self, None, Qt.WindowStaysOnTopHint)
+        self.setupUi(self)
 
         # NumberPad
         self.main_btn_0.clicked.connect(lambda state, button=self.main_btn_0: self.numClicked(state, button))
@@ -39,6 +37,13 @@ class MainDialog(QDialog):
         self.main_btn_result.clicked.connect(self.makeResult)
         self.main_btn_reset.clicked.connect(self.reset)
         self.main_btn_del.clicked.connect(self.delete)
+
+        # self.main_btn_del.setStyleSheet('image:url(../_Sources/delete.png); border:0px;')
+        self.main_btn_del.setStyleSheet(
+            '''
+            QPushButton{image:url(../_Sources/delete.png); border:0px;}
+            QPushButton:hover{image:url(../_Sources/delete_red.png); border:0px;}
+            ''')
 
     def numClicked(self, state, button):
 
