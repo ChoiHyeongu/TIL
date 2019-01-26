@@ -1,3 +1,5 @@
+package Inflearn
+
 import java.util.*
 
 fun main(args: Array<String>) {

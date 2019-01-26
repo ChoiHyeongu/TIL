@@ -1,3 +1,5 @@
+package Inflearn
+
 fun main(args: Array<String>) {
     val oneMillion = 1_000_000
     val creditCardNumber = 1234_1242_1342_3512L /* _ 표기 가능*/
