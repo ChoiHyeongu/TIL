@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d608fcc-7648-4001-a071-539fa2745aec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Inflearn/ClassAndInheritance.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin/Inflearn/ClassAndInheritanceKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin/Inflearn/ClassAndInheritanceKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin/Inflearn/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin/Inflearn/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kotlin/Inflearn/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin/Inflearn/Person.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +18,7 @@
     <session id="548385145">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.4" value="1" />
@@ -39,12 +41,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="kt" value="8326" />
+          <entry key="kt" value="9337" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kotlin" value="8326" />
+          <entry key="Kotlin" value="9337" />
+          <entry key="PLAIN_TEXT" value="21" />
         </counts>
       </usages-collector>
     </session>
@@ -54,8 +58,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Inflearn/ClassAndInheritance.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            <state relative-caret-position="350">
+              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+              <folding>
+                <element signature="n#!!block;n#Customer#0" />
+                <element signature="n#!!block;n#Person#0" />
+                <element signature="n#!!block;n#classA#0" />
+                <element signature="n#!!block;n#A#0;n#!!block;n#classA#0" />
+                <element signature="n#!!block;n#B#0" />
+                <element signature="n#!!block;n#classB#0" />
+                <element signature="n#!!block;n#classC#0" />
+                <element signature="n#!!block;n#A#0;n#!!block;n#classC#0" />
+                <element signature="n#!!block;n#Base#0" />
+                <element signature="n#!!block;n#MyClass#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,7 +122,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -155,7 +171,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Motivation/Desktop/Programming/TIL/Kotlin/src/BasicSyntax.kt" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548598450394" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548600165890" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -273,11 +289,18 @@
       <option name="presentableId" value="Default" />
       <updated>1548317127949</updated>
     </task>
+    <task id="LOCAL-00001" summary="ClassAndInhertiance">
+      <created>1548600157275</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548600157275</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.28016645" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -288,7 +311,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.56726766" visible="true" weight="0.3275862" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.56726766" weight="0.32386363" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -310,6 +333,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ClassAndInhertiance" />
+    <option name="LAST_COMMIT_MESSAGE" value="ClassAndInhertiance" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Kotlin.iml">
@@ -420,8 +447,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Inflearn/ClassAndInheritance.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state relative-caret-position="350">
+          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#Customer#0" />
+            <element signature="n#!!block;n#Person#0" />
+            <element signature="n#!!block;n#classA#0" />
+            <element signature="n#!!block;n#A#0;n#!!block;n#classA#0" />
+            <element signature="n#!!block;n#B#0" />
+            <element signature="n#!!block;n#classB#0" />
+            <element signature="n#!!block;n#classC#0" />
+            <element signature="n#!!block;n#A#0;n#!!block;n#classC#0" />
+            <element signature="n#!!block;n#Base#0" />
+            <element signature="n#!!block;n#MyClass#0" />
+          </folding>
         </state>
       </provider>
     </entry>
