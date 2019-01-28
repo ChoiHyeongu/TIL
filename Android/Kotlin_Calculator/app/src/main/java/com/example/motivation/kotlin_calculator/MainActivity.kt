@@ -6,9 +6,18 @@ import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
+import javax.script.ScriptEngine
+import javax.script.ScriptEngineManager
+import kotlin.math.exp
+
 
 class MainActivity : AppCompatActivity() {
 
+    var mgr = ScriptEngineManager()
+    var engine = mgr.getEngineByName("js")
+
+    var isOperator = false
+    var isResult = false
     var exprArrayList = arrayListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,43 +25,59 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_reset.setOnClickListener {
-            outputText.setText("0")
+            isResult = false
             exprArrayList.clear()
+            outputText.setText("0")
         }
 
         btn_result.setOnClickListener {
-            getResult()
+            if (isResult == false)
+                getResult(exprArrayList)
         }
 
         btn_reverse.setOnClickListener {
-
+            isResult = false
         }
     }
 
     fun numOnClick(text: View) {
-        val numText = text as TextView
-        val  num = numText.text.toString()
+        isResult = false
+        val textView = text as TextView
+        var value = textView.text.toString()
 
-        if (exprArrayList.size == 0 && num == "0") {
-            outputText.setText("0")
-            return
-        } else if (exprArrayList.size == 0)
-            outputText.setText(num)
+        if (isOperator == true) {
+            outputText.setText(value)
+            isOperator = false
+        } else if (outputText.text.toString() == "0")
+            outputText.setText(value)
         else
-            outputText.append(num)
-
-        exprArrayList.add(num)
+            outputText.append(value)
     }
 
     fun onCalculateClick(opt: View) {
-        var operatorTextView = opt as TextView
-        var operator = operatorTextView.text.toString()
+        isResult = false
+        val textView = opt as TextView
+        val operator = textView.text.toString()
+        isOperator = true
 
+        exprArrayList.add(outputText.text.toString())
         exprArrayList.add(operator)
+
+        Log.d("fun: onCalculate: ", operator.toString())
     }
 
-    fun getResult() {
-        Log.d("Expr", exprArrayList.toString())
-    }
+    fun getResult(expr: ArrayList<String>) {
+        isOperator = true
+        isResult = true
+        exprArrayList.add(outputText.text.toString())
+        var expression = ""
 
+
+        for(item in expr)
+            expression += item
+
+        var result = engine.eval(expression)
+        outputText.setText(result.toString())
+        Log.d("fun: getResult", expression)
+    }
 }
