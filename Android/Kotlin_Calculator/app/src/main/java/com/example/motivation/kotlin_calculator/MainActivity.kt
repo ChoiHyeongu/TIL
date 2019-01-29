@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.TextView
+import java.text.DecimalFormat
 import javax.script.ScriptEngine
 import javax.script.ScriptEngineManager
 import kotlin.math.exp
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
     var isOperator = false
     var isResult = false
     var exprArrayList = arrayListOf<String>()
+    var curResult = ""
+
+    val decimalFormat = DecimalFormat("#.########")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         btn_reset.setOnClickListener {
             isResult = false
             exprArrayList.clear()
+            btn_reset.setText("AC")
+
             outputText.setText("0")
         }
 
@@ -37,13 +43,19 @@ class MainActivity : AppCompatActivity() {
 
         btn_reverse.setOnClickListener {
             isResult = false
+            var inverseVal = getInverse(outputText.text.toString()).toString()
+            outputText.setText(inverseVal)
         }
+
+        btn_point.setOnClickListener { outputText.append(".") }
     }
 
     fun numOnClick(text: View) {
         isResult = false
         val textView = text as TextView
         var value = textView.text.toString()
+
+        btn_reset.setText("C")
 
         if (isOperator == true) {
             outputText.setText(value)
@@ -56,14 +68,24 @@ class MainActivity : AppCompatActivity() {
 
     fun onCalculateClick(opt: View) {
         isResult = false
-        val textView = opt as TextView
-        val operator = textView.text.toString()
         isOperator = true
+        val textView = opt as TextView
+        var operator = ""
 
+        when (textView.text.toString()) {
+            "+" -> operator = "+"
+            "-" -> operator = "-"
+            "X" -> operator = "*"
+            "/" -> operator = "/"
+            "%" -> {
+                var percent = decimalFormat.format(getPercent(outputText.text.toString()))
+                outputText.setText(percent.toString())
+            }
+        }
         exprArrayList.add(outputText.text.toString())
         exprArrayList.add(operator)
 
-        Log.d("fun: onCalculate: ", operator.toString())
+        Log.d("fun: onCalculate: ", operator)
     }
 
     fun getResult(expr: ArrayList<String>) {
@@ -73,11 +95,12 @@ class MainActivity : AppCompatActivity() {
         var expression = ""
 
 
-        for(item in expr)
+        for (item in expr)
             expression += item
 
-        var result = engine.eval(expression)
-        outputText.setText(result.toString())
+        curResult = decimalFormat.format(engine.eval(expression)).toString()
+        outputText.setText(curResult)
+        exprArrayList.clear()
         Log.d("fun: getResult", expression)
     }
 }
