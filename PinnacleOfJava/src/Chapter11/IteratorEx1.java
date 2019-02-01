@@ -1,7 +1,6 @@
-package Collection;
+package Chapter11;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.ListIterator;
 
 public class IteratorEx1 {

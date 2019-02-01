@@ -1,6 +1,5 @@
-package Collection;
+package Chapter11;
 
-import java.awt.*;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;

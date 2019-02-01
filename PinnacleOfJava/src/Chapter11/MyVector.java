@@ -1,4 +1,4 @@
-package Collection;
+package Chapter11;
 
 public class MyVector {
 

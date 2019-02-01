@@ -1,10 +1,7 @@
-package Collection;
+package Chapter11;
 
-import javax.swing.text.html.HTMLDocument;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.Set;
 
 public class HashSetBingo {
 
