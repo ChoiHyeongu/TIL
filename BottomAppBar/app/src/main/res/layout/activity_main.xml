@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/black">
+
+        <LinearLayout
+            android:background="#ff6f61"
+            android:gravity="center"
+            android:layout_width="72dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="32 dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_home_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="72dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="32 dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_alert_icon" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="72dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="32 dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_plans_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="72dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="32 dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_personal_icon" />
+        </LinearLayout>
+
+    </android.support.design.bottomappbar.BottomAppBar>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabCustomSize="56dp"
+        android:backgroundTint="@android:color/white"
+        android:src="@drawable/ic_add_friends"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/bottom_nav" />
+
+
+</android.support.design.widget.CoordinatorLayout>
