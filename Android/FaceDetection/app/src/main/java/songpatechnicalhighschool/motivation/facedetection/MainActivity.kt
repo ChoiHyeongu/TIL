@@ -15,12 +15,10 @@ import com.google.android.gms.vision.Frame
 import com.google.android.gms.vision.face.Face
 import com.google.android.gms.vision.face.FaceDetector
 import android.graphics.drawable.BitmapDrawable
-import android.graphics.RectF
 import android.net.Uri
 import com.google.android.gms.vision.face.Landmark
 import java.io.InputStream
 import java.lang.Exception
-import android.provider.MediaStore
 
 
 class MainActivity : AppCompatActivity() {
@@ -64,13 +62,16 @@ class MainActivity : AppCompatActivity() {
         val option = BitmapFactory.Options()
         option.inMutable = true
 
-        val myBitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(uri),null, option)
+        val myBitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(uri), null, option)
 
         val myRectPaint = Paint()
-        myRectPaint.strokeWidth = 3F
-        myRectPaint.color = Color.RED
-        myRectPaint.style = Paint.Style.STROKE
-6
+//        myRectPaint.strokeWidth = 3F
+//        myRectPaint.color = Color.RED
+//        myRectPaint.style = Paint.Style.STROKE
+        val blur = BlurMaskFilter(30F, BlurMaskFilter.Blur.NORMAL)
+        myRectPaint.maskFilter = blur
+
+
         val pnt = Paint()
         pnt.color = Color.GREEN
         pnt.strokeWidth = 5F
@@ -96,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             val y1 = thisFace.position.y
             val x2 = x1 + thisFace.width
             val y2 = y1 + thisFace.height
-            tempCanvas.drawRoundRect(RectF(x1, y1, x2, y2), 2F, 2F, myRectPaint)
+            tempCanvas.drawCircle(x2, y2, 10F, myRectPaint)
 
             val landmarks: List<Landmark> = thisFace.landmarks
             //for make landmark circle
@@ -110,6 +111,5 @@ class MainActivity : AppCompatActivity() {
         faceImage.setImageDrawable(BitmapDrawable(resources, tempBitmap))
         faceDetector.release()
     }
-
 
 }
