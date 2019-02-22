@@ -1,11 +1,7 @@
-import random
+	import random
 
+door = ['sheep', 'sheep', 'car']
 tmp = [0, 0]
-
-for(i in range(0,1000):
-    door[i] = 'sheep'
-
-door[1000] = 'car'
 
 random.shuffle(door)
 
@@ -36,13 +32,3 @@ print (door.index('car'))
 
 print ("모든 문")
 print (door)
-
-
-
-        
-
-
-
-
-
-
