@@ -1,4 +1,4 @@
-	import random
+import random
 
 door = ['sheep', 'sheep', 'car']
 tmp = [0, 0]
@@ -32,3 +32,4 @@ print (door.index('car'))
 
 print ("모든 문")
 print (door)
+
