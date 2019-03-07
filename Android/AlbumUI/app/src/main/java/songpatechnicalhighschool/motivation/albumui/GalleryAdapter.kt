@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.image_entry.view.*
+import kotlinx.android.synthetic.main.row_gallery.view.*
 
 class GalleryAdapter : BaseAdapter {
 
@@ -21,7 +21,7 @@ class GalleryAdapter : BaseAdapter {
         val image = this.imageList[position]
 
         var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var galleryCell = inflator.inflate(R.layout.image_entry, null)
+        var galleryCell = inflator.inflate(R.layout.row_gallery, null)
         galleryCell.imageView.setImageResource(image.image)
 
         return galleryCell
@@ -37,5 +37,9 @@ class GalleryAdapter : BaseAdapter {
 
     override fun getCount(): Int {
         return imageList.size
+    }
+
+    fun getImageInfo() {
+
     }
 }
