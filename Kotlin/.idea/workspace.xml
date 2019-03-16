@@ -2,7 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d608fcc-7648-4001-a071-539fa2745aec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/.idea/assetWizardSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/androidTest/java/songpatechnicalhighschool/motivation/albumui/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/java/songpatechnicalhighschool/motivation/albumui/GalleryAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/java/songpatechnicalhighschool/motivation/albumui/Image.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/java/songpatechnicalhighschool/motivation/albumui/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/drawable-v24/searchbar_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/drawable/ic_filter_list_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/drawable/ic_menu_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/drawable/search_editview.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/layout/custom_searcbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/layout/custom_toolbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/layout/row_gallery.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-xhdpi/sample.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/app/src/test/java/songpatechnicalhighschool/motivation/albumui/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/AlbumUI/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/HowFirebase/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/HowFirebase/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/HowFirebase/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/HowFirebase/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/HowFirebase/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/HowFirebase/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/HowFirebase/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/HowFirebase/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/HowFirebase/app/src/main/java/choi/org/howfirebase/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/HowFirebase/app/src/main/java/choi/org/howfirebase/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Android/HowFirebase/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Android/HowFirebase/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +69,12 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -56,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Inflearn/ClassAndInheritance.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+            <state relative-caret-position="427">
+              <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
               <folding>
                 <element signature="n#!!block;n#Customer#0" />
                 <element signature="n#!!block;n#Person#0" />
@@ -120,9 +174,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -130,22 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Kotlin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kotlin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
@@ -158,11 +196,33 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Kotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Inflearn" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Motivation/Desktop/Programming/TIL/Kotlin/src/BasicSyntax.kt" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548600165890" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552747975862" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -293,7 +353,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27986577" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28389263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -412,8 +472,8 @@
     <entry file="file://$PROJECT_DIR$/src/Inflearn/Class.java" />
     <entry file="file://$PROJECT_DIR$/src/Inflearn/ClassAndInheritance.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+        <state relative-caret-position="427">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
           <folding>
             <element signature="n#!!block;n#Customer#0" />
             <element signature="n#!!block;n#Person#0" />
