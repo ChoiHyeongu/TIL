@@ -11,7 +11,7 @@ public class Car02 extends CarExtends{
 	
 	public static void main(String[] args) {
 	
-		Car02 car02 = new Car02("ABC ");
+		Car02 car02 = new Car02("AB");
 	}
 
 }

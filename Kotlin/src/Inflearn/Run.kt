@@ -9,7 +9,6 @@ fun applyTest() {
     val string = "a"
     val result = string.apply {
         println("this = $this, it = none")
-        2
     }
     println("result $result")
 }

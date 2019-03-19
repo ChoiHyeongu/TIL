@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         mAuth = FirebaseAuth.getInstance();
 
-        // Google 로그인 옵션 객체 생
+        // Google 로그인 옵션 객체 생성
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
