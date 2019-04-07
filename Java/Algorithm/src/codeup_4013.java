@@ -29,7 +29,7 @@ public class codeup_4013 {
 		cnt = 0;
 
 		while (cal_n >= 8) {
-			remainder = cal_n % 8;x
+			remainder = cal_n % 8;
 			cal_n = cal_n / 8;
 			arr[cnt++] = remainder;
 		}

@@ -5,7 +5,7 @@ public class rock_scissors_paper_190331 {
 
 	public static void main(String[] args) {
 
-		final int ROCK = 1;
+		final int ROCK = 1; //상수 값이 안바뀜 
 		final int SCISSORS = 2;
 		final int PAPER = 3;
 
@@ -14,7 +14,7 @@ public class rock_scissors_paper_190331 {
 
 		int yourWinCount = 0, comWinCount = 0;
 		int yourInput, comInput;
-		String result = "";
+		String result = ""; //Win Lose Draw game
 
 		System.out.println("즐거운 가위! 바위! 보! 게임~");
 		System.out.println("설명 : 사용자는 가위바위보를 낼 수 있습니다.");
@@ -26,41 +26,25 @@ public class rock_scissors_paper_190331 {
 			System.out.print("용자여 선택하세요~(1.가위/2.바위/3.보)>>");
 			yourInput = scanner.nextInt();
 
-			if (yourInput < 0 || yourInput > 3) {
+			if (yourInput < 1 || yourInput > 3) {
 				System.out.println("ㅡㅡ;; 1~3번만 입력하라니깐요.");
 				continue;
 			}
 
-			if (yourInput == ROCK) {
-				if (comInput == SCISSORS) {
-					result = "Your WIN ";
-					yourWinCount++;
-				} else if (comInput == PAPER) {
-					result = "Your LOSE";
-					comWinCount++;
-				} else {
-					result = "Draw Game";
-				}
-			} else if (yourInput == SCISSORS) {
-				if (comInput == PAPER) {
-					result = "Your WIN ";
-					yourWinCount++;
-				} else if (comInput == ROCK) {
-					result = "Your LOSE";
-					comWinCount++;
-				} else {
-					result = "Draw Game";
-				}
-			} else // yourInput == PAPER{
-			if (comInput == ROCK) {
-				result = "Your WIN ";
-				yourWinCount++;
-			} else if (comInput == SCISSORS) {
-				result = "Your LOSE";
-				comWinCount++;
-			} else {
+			if (yourInput == comInput) {
 				result = "Draw Game";
+			} else if (yourInput == ROCK && comInput == SCISSORS 
+					|| yourInput == SCISSORS && comInput == PAPER
+					|| yourInput == PAPER && comInput == ROCK) {
+
+				result = "Your Win ";
+				yourWinCount++;
+			} else {
+				result = "Your Lose";
+				comWinCount++;
 			}
+			
+			System.out.println(yourInput+", "+comInput);
 
 			System.out.println("┌─────────────────────────────┐");
 			System.out.println("│          " + result + "          │");
