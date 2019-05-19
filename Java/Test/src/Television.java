@@ -1,97 +1,124 @@
+
 public class Television {
 
-    boolean isSupply = false;
-    boolean isPowerOn = false;
-    String inputType;
-    int volume = 0;
-    int[] channelList;
-    int curChannel = 0;
+	boolean isSupply = false;//
+	boolean isPowerOn = false;//
+	String inputType;//
+	int volume = 0;//
+	// String[] cableChannel = {"KBS1", "KBS2", "MBC", "SBS", "EBS"};
+	int curChannel = 0;
 
-    void supplyOn() {
-        System.out.println("ì „ë ¥ ê³µê¸‰");
-        isSupply = true;
-    }
+	void supplyOn() {
+		System.out.println("Àü·ÂÀÌ °ø±ŞµÇ¾ú¾î¿ä!");
+		isSupply = true;
+	}
 
-    void supplyOff() {
-        System.out.println("ê³µê¸‰ ì°¨ë‹¨");
-        isSupply = false;
-        isPowerOn = false;
-        inputType = null;
-        volume = 0;
-    }
+	void supplyOff() {
+		System.out.println("°ø±ŞÀÌ Â÷´ÜµÇ¾ú¾î¿ä!");
+		isSupply = false;
+		isPowerOn = false;
+		inputType = null;
+		curChannel = 0;
+		volume = 0;
+	}
 
-    void powerOn() {
-        if (isSupply){
-            isPowerOn = true;
-            System.out.println("TVê°€ ì¼œì¡ŒìŠµë‹ˆë‹¤.");
-        }
+	void powerOn() {
+		if (isSupply) {
+			isPowerOn = true;
+			System.out.println("TV°¡ ÄÑÁ³¾î¿ä!");
+		}
 
-        else
-            System.out.println("ì „ë ¥ì´ ê³µê¸‰ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
-    }
+		else
+			System.out.println("Àü·ÂÀÌ °ø±ŞµÇÁö ¾Ê¾Ò¾î¿ä¤Ğ!");
+	}
 
-    void powerOff() {
-        isPowerOn = false;
-        System.out.println("TVê°€ êº¼ì¡ŒìŠµë‹ˆë‹¤.");
-    }
+	void powerOff() {
+		isPowerOn = false;
+		System.out.println("TV°¡ ²¨Á³¾î¿ä!");
+	}
 
-    void setInputType(int type) {
-        switch (type) {
-            case 1:
-                channelList = new int[5];
-                inputType = "ìœ ì„ ë°©ì†¡";
-                System.out.println("ì™¸ë¶€ì…ë ¥ : " + inputType);
-                break;
-            case 2:
-                channelList = new int[999];
-                inputType = "ì¸í„°ë„·í‹°ë¹„";
-                System.out.println("ì™¸ë¶€ì…ë ¥ : " + inputType);
-                break;
-            case 3:
-                System.out.println("ì»´í“¨í„°ì™€ ì—°ê²°ë˜ì—ˆìŠµë‹ˆë‹¤.");
-                inputType = "HDMI-PC";
-                System.out.println("ì™¸ë¶€ì…ë ¥ : " + inputType);
-                break;
-            default:
-                break;
-        }
-    }
+	void setInputType(int type) {
+		switch (type) {
+		case 1:
+			inputType = "À¯¼±¹æ¼ÛÀÌ¿¡¿ä!";
+			System.out.println("¿ÜºÎÀÔ·Â : " + inputType);
+			break;
+		case 2:
+			inputType = "ÀÎÅÍ³İÆ¼ºñ¿¡¿ä!";
+			System.out.println("¿ÜºÎÀÔ·Â : " + inputType);
+			break;
+		case 3:
+			System.out.println("ÄÄÇ»ÅÍ¿Í ¿¬°áµÇ¾ú¾î¿ä!");
+			inputType = "HDMI-PC";
+			System.out.println("¿ÜºÎÀÔ·Â : " + inputType);
+			break;
+		default:
+			break;
+		}
+	}
 
-    void volumeUp(){
-        if(volume <=50)
-            volume = volume++;
+	void volumeUp() {
+		if (volume <= 50)
+			volume++;
 
-        System.out.println("í˜„ì¬ ë³¼ë¥¨ : " + volume);
-    }
+		System.out.println("ÇöÀç º¼·ı : " + volume);
+	}
 
-    void volumeDown(){
-        if(volume >=0)
-            volume = volume--;
+	void volumeDown() {
+		if (isPowerOn) {
+			if (volume >= 0)
+				volume--;
 
-        System.out.println("í˜„ì¬ ë³¼ë¥¨ : " + volume);
-    }
+			System.out.println("ÇöÀç º¼·ı : " + volume);
+		}
+	}
 
-    void setMute(){
-        System.out.println("ìŒì†Œê±°");
-        volume = 0;
-    }
+	void setMute() {
+		System.out.println("À½¼Ò°Å¿¡¿ä!");
+		volume = 0;
+	}
 
-    void setChannel(int channel){
-        switch (inputType){
-            case "ìœ ì„ ë°©ì†¡" :
-                curChannel = channel;
-                System.out.println("í˜„ì¬ ì±„ë„ : " + curChannel);
-                break;
-            case "ì¸í„°ë„·í‹°ë¹„":
-                if(channel < 1 || channel > 999){
-                    curChannel = channel;
-                    System.out.println("í˜„ì¬ ì±„ë„ : " + curChannel);
-                }
-                break;
-            default:
-                System.out.println("HDMI-PC ì…ë‹ˆë‹¤.");
-                break;
-        }
-    }
+	void setChannel(int channel) {
+		switch (inputType) {
+		case "À¯¼±¹æ¼ÛÀÌ¿¡¿ä!":
+			curChannel = channel;
+			System.out.println("ÇöÀç Ã¤³Î : " + curChannel);
+			break;
+		case "ÀÎÅÍ³İÆ¼ºñ¿¡¿ä!":
+			if (0 < channel && channel < 1000) {
+				curChannel = channel;
+				System.out.println("ÇöÀç Ã¤³Î : " + curChannel);
+			}
+		case "À¯¼±Æ¼ºñ¿¡¿ä!":
+			if (isPowerOn) {
+				switch (channel) {
+				case 6:
+					curChannel = 6;
+					System.out.println("SBS");
+					break;
+				case 7:
+					curChannel = 7;
+					System.out.println("KBS2");
+					break;
+				case 9:
+					curChannel = 9;
+					System.out.println("KBS1");
+					break;
+				case 11:
+					curChannel = 11;
+					System.out.println("MBC");
+					break;
+				case 13:
+					curChannel = 13;
+					System.out.println("EBS");
+					break;
+				}
+			}
+			break;
+		default:
+			System.out.println("HDMI-PC ¿¡¿ä!");
+			break;
+		}
+	}
 
 }
