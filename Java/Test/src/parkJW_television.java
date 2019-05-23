@@ -6,7 +6,13 @@ import java.util.Scanner;
 public class parkJW_television {
 
 	public static void main(String[] args) {
+		
+		
+		
+		
 		Television tv = new Television();
+		
+		
 		tv.supplyOn();
 		tv.powerOn();
 		Scanner scanner = new Scanner(System.in);
