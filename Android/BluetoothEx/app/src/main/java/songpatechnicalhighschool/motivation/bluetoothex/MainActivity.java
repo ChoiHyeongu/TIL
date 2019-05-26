@@ -48,12 +48,14 @@ public class MainActivity extends AppCompatActivity {
                     //블루투스 디바이스 찾음
                     case BluetoothDevice.ACTION_FOUND:
                         //검색한 블루투스 디바이스의 객체를 구한다
+                        Toast.makeText(context, "Find Bluetooth", Toast.LENGTH_SHORT).show();
                         BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                         //데이터 저장
                         Map map = new HashMap();
                         map.put("name", device.getName()); //device.getName() : 블루투스 디바이스의 이름
                         map.put("address", device.getAddress()); //device.getAddress() : 블루투스 디바이스의 MAC 주소
                         dataDevice.add(map);
+                        Toast.makeText(context, dataDevice.get(0).get("name"), Toast.LENGTH_SHORT).show();
                         //리스트 목록갱신
                         break;
                     //블루투스 디바이스 검색 종료
