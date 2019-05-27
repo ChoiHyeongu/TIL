@@ -14,10 +14,10 @@ import java.util.Map;
 
 public class BluetoothListAdapter extends RecyclerView.Adapter<BluetoothListAdapter.ViewHolder> {
 
-    private List<Map<String,String>> bluetoothList;
+    private ArrayList<String> bluetoothList;
     private Context context;
 
-    public BluetoothListAdapter(List<Map<String, String>> bluetoothList, Context context) {
+    public BluetoothListAdapter(ArrayList<String> bluetoothList, Context context) {
         this.bluetoothList = bluetoothList;
         this.context = context;
     }
@@ -31,7 +31,7 @@ public class BluetoothListAdapter extends RecyclerView.Adapter<BluetoothListAdap
 
     @Override
     public void onBindViewHolder(@NonNull BluetoothListAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.bluetoothItem.setText(bluetoothList.get(i).get("name"));
+        viewHolder.bluetoothItem.setText(bluetoothList.get(i));
     }
 
     @Override
