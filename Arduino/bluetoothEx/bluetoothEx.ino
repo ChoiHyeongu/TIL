@@ -1,19 +1,20 @@
-    #include <SoftwareSerial.h>
+#include <SoftwareSerial.h>
 
-SoftwareSerial BTSerial(2, 3);
+SoftwareSerial HM10(2,3); // RX, TX
 
 void setup() {
-
+  //기본 통신속도는 9600입니다.
   Serial.begin(9600);
-  BTSerial.begin(9600);
+  HM10.begin(9600);
 }
 
 void loop() {
-
-  if(BTSerial.available())
-    Serial.write(BTSerial.read());
-
-  if(Serial.available())
-    BTSerial.write(Serial.read());  
-
+  if (HM10.available()) {
+    byte data = HM10.read();
+    Serial.write(HM10.read());
+  }
+  if (Serial.available()) {
+    byte data = Serial.read();
+    HM10.write(Serial.read());
+  }
 }
