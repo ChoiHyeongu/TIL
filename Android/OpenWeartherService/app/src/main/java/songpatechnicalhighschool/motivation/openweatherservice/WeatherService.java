@@ -17,7 +17,7 @@ import retrofit2.Response;
 public class WeatherService {
 
     final String OPEN_WEATHER_MAP_KEY = "704a83a5f8f3436366adba0f15c18d38";
-    Weather weather;
+    static Weather mWeather;
 
     public Weather getCurrentWeather(String latitude, String longitude) {
 
@@ -32,8 +32,8 @@ public class WeatherService {
                 String jsonObj = null;
                 if (response.body() != null) {
                     jsonObj = response.body().toString();
-                    weather = getWeather(response.body());
-
+                    getWeather(response.body());
+                    Log.d("WeatherService", mWeather.toString());
                 } else {
                     System.out.println(response.toString());
                 }
@@ -45,12 +45,11 @@ public class WeatherService {
                 Log.d("Retrofit", "Failure : " + t.getMessage());
             }
         });
-
-        Log.d("Service", weather.text + ", " + weather.temperature);
-        return weather;
+        //Log.d("WeatherService", mWeather.toString());
+        return mWeather;
     }
 
-    public Weather getWeather(JsonObject jsonObject) {
+    public void getWeather(JsonObject jsonObject) {
 
         String weatherText;
 
@@ -94,7 +93,7 @@ public class WeatherService {
         Log.d("WeatherText", id+"");
         Log.d("WeatherText", weatherText + ", " + temperature);
         Weather weatherVal = new Weather(weatherText, Float.toString(temperature));
-        return weatherVal;
+        mWeather = weatherVal;
     }
 
     private String getThunder(int id) {
