@@ -2,8 +2,8 @@ package songpatechnicalhighschool.motivation.openweatherservice;
 
 public class Weather {
 
-    String text;
-    String temperature;
+    private String text;
+    private String temperature;
 
     public Weather() {
     }
@@ -22,6 +22,7 @@ public class Weather {
     }
 
     public String getTemperature() {
+        temperature = temperature.substring(0,2);
         return temperature;
     }
 

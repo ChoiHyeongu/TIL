@@ -3,12 +3,7 @@ package songpatechnicalhighschool.motivation.openweatherservice;
 import android.util.Log;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -16,40 +11,7 @@ import retrofit2.Response;
 
 public class WeatherService {
 
-    final String OPEN_WEATHER_MAP_KEY = "704a83a5f8f3436366adba0f15c18d38";
-    static Weather mWeather;
-
-    public Weather getCurrentWeather(String latitude, String longitude) {
-
-        final Call<JsonObject> res = RetrofitClient
-                .getInstance()
-                .buildRetrofit()
-                .getCurrentWeather(latitude, longitude, OPEN_WEATHER_MAP_KEY);
-
-        res.enqueue(new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                String jsonObj = null;
-                if (response.body() != null) {
-                    jsonObj = response.body().toString();
-                    getWeather(response.body());
-                    Log.d("WeatherService", mWeather.toString());
-                } else {
-                    System.out.println(response.toString());
-                }
-                Log.d("Retrofit", "Success :" + jsonObj);
-            }
-
-            @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
-                Log.d("Retrofit", "Failure : " + t.getMessage());
-            }
-        });
-        //Log.d("WeatherService", mWeather.toString());
-        return mWeather;
-    }
-
-    public void getWeather(JsonObject jsonObject) {
+    public Weather weatherToText(JsonObject jsonObject) {
 
         String weatherText;
 
@@ -78,7 +40,7 @@ public class WeatherService {
                 weatherText = getDisaster(id);
                 break;
             case 7:
-                weatherText = getCloudy(id);
+                weatherText = getDisaster(id);
                 break;
             case 8:
                 weatherText = getCloudy(id);
@@ -93,7 +55,7 @@ public class WeatherService {
         Log.d("WeatherText", id+"");
         Log.d("WeatherText", weatherText + ", " + temperature);
         Weather weatherVal = new Weather(weatherText, Float.toString(temperature));
-        mWeather = weatherVal;
+        return weatherVal;
     }
 
     private String getThunder(int id) {
