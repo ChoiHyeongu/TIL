@@ -1,0 +1,18 @@
+fieldset{
+  width: 300px
+}
+
+.text {
+  display: inline-block;
+  width: 120px;
+}
+
+#email {
+  margin-top: 3px;
+  width: 275px
+}
+
+#verify_number {
+  margin-top: 3px;
+  width: 220px
+}
