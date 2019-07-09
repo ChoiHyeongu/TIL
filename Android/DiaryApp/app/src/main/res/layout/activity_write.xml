@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_write"
+    tools:context=".WriteActivity">
+
+    <Button
+        android:id="@+id/write_datePickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="35dp"
+        android:text="날짜"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/write_titleEditText"
+        android:textSize="30sp"
+        android:hint="오늘의 일기 제목"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/write_contentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/write_saveButton"
+        android:layout_below="@+id/write_titleEditText"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="start"
+        android:hint="오늘의 일기 내용"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/write_saveButton"
+        android:layout_marginVertical="15dp"
+        android:textSize="28sp"
+        android:layout_alignParentBottom="true"
+        android:text="저장"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
