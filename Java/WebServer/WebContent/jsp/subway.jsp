@@ -8,6 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>거여동 지하철</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 		</c:import>
 		<!-- xml 파싱 -->
 		<x:parse varDom="subway" xml="${subway}"></x:parse>
-		<h2><x:out select="$subway/realtimeStationArrival/row/trainLineNm"></x:out></h2>;
+		<h2><x:out select="$subway/realtimeStationArrival/row/trainLineNm"></x:out></h2>
 		시간 : <x:out select="$subway/realtimeStationArrival/row/recptnDt"></x:out>
 		<br>
 		내리는 문 : <x:out select="$subway/realtimeStationArrival/row/subwayHeading"></x:out>
