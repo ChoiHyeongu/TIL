@@ -25,7 +25,7 @@ public class ParserServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html; charset=utf-8"); 
 		PrintWriter out = response.getWriter();
-		out.println("<fieldset style=\"width:340px; background:yellow\">" + "<legend align=\"center\">" + getDate() + " 급식입니다!</legend>");
+		out.println("<fieldset style=\"width:340px; background:yellow;\">" + "<legend align=\"center\">" + getDate() + " 급식입니다!</legend>");
 		Parser parser = new Parser();
 		String meal = parser.getMeal();
 		out.println(meal);
