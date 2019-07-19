@@ -1,4 +1,4 @@
-package com.lannbox.rfduinotest;
+package songpatechnicalhighschool.motivation.bluetoothdatareciever;
 
 import android.bluetooth.BluetoothDevice;
 

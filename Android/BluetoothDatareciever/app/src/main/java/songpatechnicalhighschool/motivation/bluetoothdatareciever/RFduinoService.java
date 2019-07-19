@@ -21,7 +21,7 @@
  *
  */
 
-package com.lannbox.rfduinotest;
+package songpatechnicalhighschool.motivation.bluetoothdatareciever;
 
 import android.Manifest;
 import android.app.Service;
@@ -39,6 +39,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.IBinder;
+import android.text.Editable;
 import android.util.Log;
 
 import java.util.UUID;
@@ -180,7 +181,7 @@ public class RFduinoService extends Service {
     public boolean initialize() {
         // For API level 18 and above, get a reference to BluetoothAdapter through
         // BluetoothManager.
-        if (mBluetoothManager == null) {
+        if (mBluetoothManager != null) {
             mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
             if (mBluetoothManager == null) {
                 Log.e(TAG, "Unable to initialize BluetoothManager.");
@@ -208,14 +209,14 @@ public class RFduinoService extends Service {
      *         callback.
      */
     public boolean connect(final String address) {
+        Log.d("RFduinoService", "connect start");
         if (mBluetoothAdapter == null || address == null) {
             Log.w(TAG, "BluetoothAdapter not initialized or unspecified address.");
             return false;
         }
 
         // Previously connected device.  Try to reconnect.
-        if (mBluetoothDeviceAddress != null && address.equals(mBluetoothDeviceAddress)
-                && mBluetoothGatt != null) {
+        if (address.equals(mBluetoothDeviceAddress) && mBluetoothGatt != null) {
             Log.d(TAG, "Trying to use an existing mBluetoothGatt for connection.");
             return mBluetoothGatt.connect();
         }
@@ -267,7 +268,8 @@ public class RFduinoService extends Service {
         mBluetoothGatt.readCharacteristic(characteristic);
     }
 
-    public boolean send(byte[] data) {
+    public boolean send() {
+        int intData = 1;
         if (mBluetoothGatt == null || mBluetoothGattService == null) {
             Log.w(TAG, "BluetoothGatt not initialized");
             return false;
@@ -280,8 +282,7 @@ public class RFduinoService extends Service {
             Log.w(TAG, "Send characteristic not found");
             return false;
         }
-
-        characteristic.setValue(data);
+        characteristic.setValue(String.valueOf(intData));
         characteristic.setWriteType(BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE);
         return mBluetoothGatt.writeCharacteristic(characteristic);
     }
