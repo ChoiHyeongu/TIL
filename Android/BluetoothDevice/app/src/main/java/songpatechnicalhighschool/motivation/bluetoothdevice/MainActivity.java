@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     final static int BT_REQUEST_ENABLE = 1;
     final static int BT_MESSAGE_READ = 2;
     final static int BT_CONNECTING_STATUS = 3;
-    final static String BT_UUID = "0xE2 0xC5 0x6D 0xB5 0xDF 0xFB 0x48 0xD2 0xB0 0x60 0xD0 0xF5 0xA7 0x10 0x96 0xE0";//11100010-11000101-1101101
+    final static String BT_UUID = "00002220-0000-1000-8000-00805f9b34fb";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
