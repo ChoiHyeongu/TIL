@@ -1,0 +1,11 @@
+fieldset{
+  width: 240px
+}
+
+.input{
+  margin-bottom: 5px;
+}
+
+#forget_button {
+  margin-left: 10px
+}
