@@ -1,9 +1,8 @@
-package songpatechnicalhighschool.motivation.bluetoothdatareciever;
+package songpatechnicalhighschool.motivation.bluetoothspp;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.le.BluetoothLeScanner;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,8 +11,6 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -21,13 +18,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Arrays;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity implements BluetoothAdapter.LeScanCallback {
-
-    final private String TAG = "RFService";
-
+public class MainActivity extends Activity implements BluetoothAdapter.LeScanCallback {
+    // State machine
     final private static int STATE_BLUETOOTH_OFF = 1;
     final private static int STATE_DISCONNECTED = 2;
     final private static int STATE_CONNECTING = 3;
@@ -40,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
 
     private BluetoothAdapter bluetoothAdapter;
     private BluetoothDevice bluetoothDevice;
-    private BluetoothLeScanner bluetoothLeScanner;
 
     private RFduinoService rfduinoService;
 
@@ -80,10 +73,9 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
     private final ServiceConnection rfduinoServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            Log.d(TAG, "rfduinoServiceConnection");
             rfduinoService = ((RFduinoService.LocalBinder) service).getService();
             if (rfduinoService.initialize()) {
-                if (rfduinoService.connect("C3:69:48:21:36:C8")) {
+                if (rfduinoService.connect(bluetoothDevice.getAddress())) {
                     upgradeState(STATE_CONNECTING);
                 }
             }
@@ -99,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
     private final BroadcastReceiver rfduinoReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.d(TAG, "rfduinoReceiver");
             final String action = intent.getAction();
             if (RFduinoService.ACTION_CONNECTED.equals(action)) {
                 upgradeState(STATE_CONNECTED);
@@ -117,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
         setContentView(R.layout.activity_main);
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        bluetoothLeScanner = bluetoothAdapter.getBluetoothLeScanner();
 
         // Bluetooth
         enableBluetoothButton = (Button) findViewById(R.id.enableBluetooth);
@@ -156,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
             public void onClick(View v) {
                 v.setEnabled(false);
                 connectionStatusText.setText("Connecting...");
-                Log.d(TAG, "connectButton");
                 Intent rfduinoIntent = new Intent(MainActivity.this, RFduinoService.class);
                 bindService(rfduinoIntent, rfduinoServiceConnection, BIND_AUTO_CREATE);
             }
@@ -283,32 +272,34 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
 
     private void addData(byte[] data) {
         View view = getLayoutInflater().inflate(android.R.layout.simple_list_item_2, dataLayout, false);
-        Log.d(TAG, "addData");
+
         TextView text1 = (TextView) view.findViewById(android.R.id.text1);
         text1.setText(HexAsciiHelper.bytesToHex(data));
 
         String ascii = HexAsciiHelper.bytesToAsciiMaybe(data);
         if (ascii != null) {
             TextView text2 = (TextView) view.findViewById(android.R.id.text2);
-            text2.setText((int) Long.parseLong(ascii, 16));
+            text2.setText(ascii);
         }
 
         dataLayout.addView(
                 view, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     }
+
     @Override
     public void onLeScan(BluetoothDevice device, final int rssi, final byte[] scanRecord) {
         bluetoothAdapter.stopLeScan(this);
         bluetoothDevice = device;
-        Log.d(TAG, "onLeScan");
+
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 deviceInfoText.setText(
                         BluetoothHelper.getDeviceInfoText(bluetoothDevice, rssi, scanRecord));
-                Log.d("DeviceAddress", bluetoothDevice.getAddress()+", " + Arrays.toString(bluetoothDevice.getUuids()));
                 updateUi();
             }
         });
     }
+
 }
+

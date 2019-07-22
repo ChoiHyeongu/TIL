@@ -21,7 +21,7 @@
  *
  */
 
-package songpatechnicalhighschool.motivation.bluetoothdatareciever;
+package songpatechnicalhighschool.motivation.bluetoothspp;
 
 import android.Manifest;
 import android.app.Service;
@@ -48,7 +48,7 @@ import java.util.UUID;
  * http://developer.android.com/samples/BluetoothLeGatt/src/com.example.android.bluetoothlegatt/BluetoothLeService.html
  */
 public class RFduinoService extends Service {
-    private final static String TAG = "RFduinoService";
+    private final static String TAG = RFduinoService.class.getSimpleName();
 
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
