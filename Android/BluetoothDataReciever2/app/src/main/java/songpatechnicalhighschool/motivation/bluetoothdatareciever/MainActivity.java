@@ -24,7 +24,7 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity implements BluetoothAdapter.LeScanCallback {
+public class MainActivity extends AppCompatActivity {
 
     final private String TAG = "RFService";
 
@@ -65,15 +65,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
             } else if (state == BluetoothAdapter.STATE_OFF) {
                 downgradeState(STATE_BLUETOOTH_OFF);
             }
-        }
-    };
-
-    private final BroadcastReceiver scanModeReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            scanning = (bluetoothAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_NONE);
-            scanStarted &= scanning;
-            updateUi();
         }
     };
 
@@ -124,28 +115,10 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
         enableBluetoothButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                enableBluetoothButton.setEnabled(false);
                 enableBluetoothButton.setText(
                         bluetoothAdapter.enable() ? "Enabling bluetooth..." : "Enable failed!");
             }
         });
-
-        // Find Device
-        scanStatusText = (TextView) findViewById(R.id.scanStatus);
-
-        scanButton = (Button) findViewById(R.id.scan);
-        scanButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                scanStarted = true;
-                bluetoothAdapter.startLeScan(
-                        new UUID[]{ RFduinoService.UUID_SERVICE },
-                        MainActivity.this);
-            }
-        });
-
-        // Device Info
-        deviceInfoText = (TextView) findViewById(R.id.deviceInfo);
 
         // Connect Device
         connectionStatusText = (TextView) findViewById(R.id.connectionStatus);
@@ -154,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
         connectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setEnabled(false);
                 connectionStatusText.setText("Connecting...");
                 Log.d(TAG, "connectButton");
                 Intent rfduinoIntent = new Intent(MainActivity.this, RFduinoService.class);
@@ -208,7 +180,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
     protected void onStart() {
         super.onStart();
 
-        registerReceiver(scanModeReceiver, new IntentFilter(BluetoothAdapter.ACTION_SCAN_MODE_CHANGED));
         registerReceiver(bluetoothStateReceiver, new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED));
         registerReceiver(rfduinoReceiver, RFduinoService.getIntentFilter());
 
@@ -219,9 +190,6 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
     protected void onStop() {
         super.onStop();
 
-        bluetoothAdapter.stopLeScan(this);
-
-        unregisterReceiver(scanModeReceiver);
         unregisterReceiver(bluetoothStateReceiver);
         unregisterReceiver(rfduinoReceiver);
     }
@@ -240,75 +208,33 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
 
     private void updateState(int newState) {
         state = newState;
-        updateUi();
-    }
-
-    private void updateUi() {
-        // Enable Bluetooth
-        boolean on = state > STATE_BLUETOOTH_OFF;
-        enableBluetoothButton.setEnabled(!on);
-        enableBluetoothButton.setText(on ? "Bluetooth enabled" : "Enable Bluetooth");
-        scanButton.setEnabled(on);
-
-        // Scan
-        if (scanStarted && scanning) {
-            scanStatusText.setText("Scanning...");
-            scanButton.setText("Stop Scan");
-            scanButton.setEnabled(true);
-        } else if (scanStarted) {
-            scanStatusText.setText("Scan started...");
-            scanButton.setEnabled(false);
-        } else {
-            scanStatusText.setText("");
-            scanButton.setText("Scan");
-            scanButton.setEnabled(true);
-        }
-
-        // Connect
-        boolean connected = false;
-        String connectionText = "Disconnected";
-        if (state == STATE_CONNECTING) {
-            connectionText = "Connecting...";
-        } else if (state == STATE_CONNECTED) {
-            connected = true;
-            connectionText = "Connected";
-        }
-        connectionStatusText.setText(connectionText);
-        connectButton.setEnabled(bluetoothDevice != null && state == STATE_DISCONNECTED);
-
-        // Send
-        sendZeroButton.setEnabled(connected);
-        sendValueButton.setEnabled(connected);
     }
 
     private void addData(byte[] data) {
         View view = getLayoutInflater().inflate(android.R.layout.simple_list_item_2, dataLayout, false);
-        Log.d(TAG, "addData");
+        Log.d(TAG, "addData" + data[0]);
         TextView text1 = (TextView) view.findViewById(android.R.id.text1);
-        text1.setText(HexAsciiHelper.bytesToHex(data));
+        String value = String.valueOf(data[0]);
+        text1.setText(value);
 
-        String ascii = HexAsciiHelper.bytesToAsciiMaybe(data);
-        if (ascii != null) {
-            TextView text2 = (TextView) view.findViewById(android.R.id.text2);
-            text2.setText((int) Long.parseLong(ascii, 16));
-        }
+        checkLedLight(value);
 
         dataLayout.addView(
                 view, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     }
-    @Override
-    public void onLeScan(BluetoothDevice device, final int rssi, final byte[] scanRecord) {
-        bluetoothAdapter.stopLeScan(this);
-        bluetoothDevice = device;
-        Log.d(TAG, "onLeScan");
-        MainActivity.this.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                deviceInfoText.setText(
-                        BluetoothHelper.getDeviceInfoText(bluetoothDevice, rssi, scanRecord));
-                Log.d("DeviceAddress", bluetoothDevice.getAddress()+", " + Arrays.toString(bluetoothDevice.getUuids()));
-                updateUi();
-            }
-        });
+
+    private void checkLedLight(String value) {
+
+        byte[] on = {1};
+        byte[] off = {0};
+        int length = Integer.parseInt(value);
+
+        if(length > 5 && length < 50){
+            rfduinoService.send(on);
+        } else {
+            rfduinoService.send(off);
+        }
     }
+
+
 }

@@ -46,7 +46,7 @@
             android:text="Scan"
             android:id="@+id/scan"
             android:layout_gravity="center_horizontal"
-            android:enabled="false" />
+            android:enabled="true" />
 
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
@@ -80,7 +80,7 @@
             android:text="Connect"
             android:id="@+id/connect"
             android:layout_gravity="center_horizontal"
-            android:enabled="false" />
+            android:enabled="true" />
 
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
@@ -114,7 +114,7 @@
                 android:text="Send Zero"
                 android:id="@+id/sendZero"
                 android:layout_weight="1"
-                android:enabled="false" />
+                android:enabled="true" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
                 android:text="Send Value"
                 android:id="@+id/sendValue"
                 android:layout_weight="1"
-                android:enabled="false" />
+                android:enabled="true" />
 
         </LinearLayout>
 
@@ -141,7 +141,7 @@
             android:id="@+id/clearData"
             android:layout_weight="1"
             android:layout_marginTop="2dip"
-            android:singleLine="false" />
+            android:singleLine="true" />
 
         <LinearLayout
             android:orientation="horizontal"
