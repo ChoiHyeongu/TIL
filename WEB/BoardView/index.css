@@ -1,0 +1,61 @@
+html {
+  font-family: sans-serif;
+}
+
+.icon {
+  float: left;
+  margin-right: 20px;
+  display: inline;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+}
+
+.search{
+
+}
+
+.add_view_button {
+  background: none;
+  background-color: #FFF;
+  border: none;
+}
+
+.add_view{
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.add_view{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu_list{
+  margin:0;
+  padding:0;
+}
+
+.menu{
+  padding: 0;
+  margin:0;
+}
+
+.menu{
+  display: inline-block;
+}
+
+hr{
+  padding : -100px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  float: left;
+}

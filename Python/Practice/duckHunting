@@ -1,0 +1,20 @@
+class DuckHunting:
+    ducks = 13
+
+    def hunting(self):
+        print("Catch")
+        self.ducks -= 1
+
+    def CheckDucks(self):
+        if self.ducks <= 0:
+            print("Good")
+        else :
+            print((str(self.ducks)+"Ducks left"))
+
+
+dog1 = DuckHunting()
+
+for i in range(10):
+    dog1.hunting()
+
+dog1.CheckDucks()

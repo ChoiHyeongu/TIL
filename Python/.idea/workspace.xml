@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="716c04be-443c-48de-937f-c8cce9042948" name="Default" comment="TIL">
-      <change afterPath="$PROJECT_DIR$/Policy Iteratin/environment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Practice/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../einforcement_learning/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../einforcement_learning/policy_iteration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MontyHall_Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/MontyHall_Problem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bonjour.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/bonjour.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bubble_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/bubble_sort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chiren.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/chiren.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/do_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duckHunting" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/duckHunting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forx2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/forx2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gugudan.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/gugudan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/if.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/if.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/import_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/import_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initMethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/initMethod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/io_func.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/lambda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mulitprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/mulitprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/randomN.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/randomN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/schedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selectionSort.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/selectionSort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/thread.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/variable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/weather_parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/will_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/will_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WEB/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WEB/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WEB/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WEB/index_style.css" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,9 +27,10 @@
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -158,8 +129,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Policy Iteratin/policy_iteration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="285">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
               </folding>
@@ -204,7 +175,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="979" />
     <option name="height" value="1040" />
@@ -214,25 +185,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="Policy Iteratin" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -421,11 +374,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564055586087</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="TIL">
+      <created>1564152935940</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564152935940</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="761" y="0" width="782" height="831" extended-state="0" />
+    <frame x="760" y="0" width="783" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24865592" />
@@ -597,8 +557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Policy Iteratin/policy_iteration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        <state relative-caret-position="285">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#25#38#0" expanded="true" />
           </folding>
