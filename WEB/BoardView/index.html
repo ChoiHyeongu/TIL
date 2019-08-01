@@ -4,16 +4,17 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="index.css">
-   <script type="text/javascript" src="index.js"></script>
   <title>Notion</title>
 </head>
 
 <body>
+  <script type="text/javascript" src="index.js"></script>
   <div class="board">
     <div class="top_menu">
       <div class="add_view">
         <input class="add_view_button"
         id="view_button"
+        onclick="showAlert()"
         type="button"
         name="add_view"
         value="+ Add a View">
@@ -31,7 +32,7 @@
                 <span class="name">Sketch</span>
               </div>
               <div class="tag_cell">
-                <span class="tag">Professional</span>
+                <span class="tag" id="tag_test">Professional</span>
               </div>
             </div>
           </td>
