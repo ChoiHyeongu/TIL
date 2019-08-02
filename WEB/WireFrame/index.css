@@ -2,21 +2,26 @@ html{
   font-family: sans-serif;
 }
 
+html, body{
+  height: 100%;
+  margin:0;
+  overflow: hidden;
+}
+
 .left_screen, .right_screen{
-  border: 0;
+  margin  : 0;
   padding: 0;
 }
 
 .left_screen{
-  width: 50%;
+  width: 70%;
   height: 100%;
   float: left;
-
   background: #EDEDED;
 }
 
 .right_screen{
-  width: 50%;
+  width: 30%;
   display: block;
   float: right;
   background: white;
@@ -27,6 +32,13 @@ html{
   font-weight: bold;
 }
 
+.sub_copy, .google_login, .faceboox_login{
+  color: gray;
+}
+
 .google_login, .faceboox_login{
+  border: 1px solid black;
   width: 250px;
+  margin: 10px;
+  height: 40px;
 }
