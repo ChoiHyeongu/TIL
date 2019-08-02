@@ -1,0 +1,32 @@
+html{
+  font-family: sans-serif;
+}
+
+.left_screen, .right_screen{
+  border: 0;
+  padding: 0;
+}
+
+.left_screen{
+  width: 50%;
+  height: 100%;
+  float: left;
+
+  background: #EDEDED;
+}
+
+.right_screen{
+  width: 50%;
+  display: block;
+  float: right;
+  background: white;
+}
+
+.main_copy{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.google_login, .faceboox_login{
+  width: 250px;
+}
