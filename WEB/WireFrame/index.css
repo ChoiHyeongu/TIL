@@ -1,42 +1,51 @@
-html{
+html {
   font-family: sans-serif;
 }
 
-html, body{
+html, body {
   height: 100%;
-  margin:0;
+  margin: 0;
   overflow: hidden;
 }
 
-.left_screen, .right_screen{
-  margin  : 0;
+.left_screen, .right_screen {
+  margin: 0;
   padding: 0;
 }
 
-.left_screen{
-  width: 70%;
+#title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.left_screen {
+  width: 60%;
   height: 100%;
   float: left;
   background: #EDEDED;
 }
 
-.right_screen{
-  width: 30%;
+.right_screen {
+  text-align: center;
+  margin-top: 25%;
+  width: 40%;
   display: block;
   float: right;
   background: white;
 }
 
-.main_copy{
+
+.main_copy {
   font-size: 30px;
   font-weight: bold;
 }
 
-.sub_copy, .google_login, .faceboox_login{
+.sub_copy, .google_login, .faceboox_login {
   color: gray;
 }
 
-.google_login, .faceboox_login{
+.google_login, .faceboox_login {
   border: 1px solid black;
   width: 250px;
   margin: 10px;

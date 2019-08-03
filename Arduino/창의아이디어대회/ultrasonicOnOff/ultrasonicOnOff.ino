@@ -1,13 +1,15 @@
 // 스마트폰으로 LED 켜기
 #include <RFduinoBLE.h>  // 블루투스 라이브러리를 사용하기 위해 헤더 파일 추가
 
-int led = 2;                   // LED에 연결된 핀을  2번으로 설정 
+int led = 2;    // LED에 연결된 핀을  2번으로 설정 
+int buzzer = 4;
 int isOn = false;
 int echoPin = 14;
 int trigPin = 13; 
 void setup() {
 pinMode(led, OUTPUT);   // LED를 출력으로 설정 
-    RFduinoBLE.advertisementData = "ledbtn";      // 블루투스 통신 데이타를  
+pinMode(buzzer, OUTPUT);
+RFduinoBLE.advertisementData = "ledbtn";      // 블루투스 통신 데이타를  
                                                                  // ledbtn 포맷 적용
 Serial.begin(9600);
 RFduinoBLE.begin();    // 블루투스 (BLE) 스택의 시작함을 의미하며, 
@@ -51,5 +53,13 @@ void onUltrasonic(){
   //dtostrf(distance, 4, 6, value);
   RFduinoBLE.sendInt(distance);
   // 수정한 값을 출력
+
+  if(distance < 30){
+    Serial.println("Buzzer");
+      digitalWrite(buzzer, HIGH);
+  } else {
+      digitalWrite(buzzer, LOW);
+  }
+ 
   delay(300);
 }
