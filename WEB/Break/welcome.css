@@ -1,14 +1,86 @@
-.title{
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.title, .start, .join {
   display: inline-block;
 }
 
-.menu{
+.title{
+  font-size: 25px;
+  margin: 5px 0px 0px 5px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #EC0A4C;
+}
+
+.menu {
   float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#signup{
+  color: #EC0A4C;
+}
+
+.left, .right {
+  background: #FAFAFA;
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  margin-top: 20px;
+}
+
+.left {
+  margin-left: 20px;
+  left: 0;
+}
+
+.right {
+  margin-right: 20px;
+  right: 0;
+}
+
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main_text{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.sub_text{
+  width: 600px;
+  color: #CACBCB;
 }
 
 .menu_btn {
   border: 0;
+  font-weight: bold;
   background: white;
-  margin:3px;
+  margin: 3px;
   padding: 0;
+}
+
+.start_btn{
+  color: white;
+  border: 0;
+  border-radius: 50px;
+  height: 50px;
+  width: 200px;
+  background: #EC0A4C;
+}
+
+.enter_button{
+  margin-left: 10px;
+  background: #FAFAFA;
+  border: 0;
 }
