@@ -27,8 +27,7 @@ html, body {
 }
 
 .right_screen {
-  text-align: center;
-  margin-top: 25%;
+  margin-top: 15%;
   width: 40%;
   display: block;
   float: right;
@@ -41,8 +40,17 @@ html, body {
   font-weight: bold;
 }
 
+.main_copy, .sub_copy, .login{
+  justify-content: center;
+  display: flex;
+}
+
 .sub_copy, .google_login, .faceboox_login {
   color: gray;
+}
+
+.login{
+  flex-wrap: wrap;
 }
 
 .google_login, .faceboox_login {
