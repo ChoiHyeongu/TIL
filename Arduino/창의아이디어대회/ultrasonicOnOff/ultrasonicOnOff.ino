@@ -6,30 +6,43 @@ int buzzer = 4;
 int isOn = false;
 int echoPin = 14;
 int trigPin = 13; 
+int ultrasonic = 2;
 void setup() {
-pinMode(led, OUTPUT);   // LED를 출력으로 설정 
+pinMode(led, OUTPUT);   
 pinMode(buzzer, OUTPUT);
-RFduinoBLE.advertisementData = "ledbtn";      // 블루투스 통신 데이타를  
-                                                                 // ledbtn 포맷 적용
+RFduinoBLE.advertisementData = "I_Frind";   
+                                                                 
 Serial.begin(9600);
-RFduinoBLE.begin();    // 블루투스 (BLE) 스택의 시작함을 의미하며, 
-                               // 이를 통하여 관련 서비스를  할 수 있습니다.
-                pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-}
- void loop() {
-    onUltrasonic();
+RFduinoBLE.begin();    
+                               
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+
 }
 
-void RFduinoBLE_onReceive(char *data, int len) // 블루투스 수신 데이터를 처리 함수
-                          // char data 란에 데이터(0~F), len 란에는 길이 표시 
-{                                                               
-  if(data[0]==0){
-     Serial.print("0\n");
-    digitalWrite(led, LOW);
-  } else if(data[0]){ 
-    Serial.print("1\n");
-    digitalWrite(led, HIGH);
+ void loop() {
+   if(ultrasonic == 1){
+     onUltrasonic();
+   }
+}
+
+void RFduinoBLE_onReceive(char *data, int len) {                                                               
+  switch(data[0]){
+    case '1':
+      ultrasonic = 1;
+      break;
+    case '2':
+      ultrasonic = 2;
+      break;
+    case '3':
+      onSOS();
+      break;
+    case '4':
+      offSOS();
+      break;
+    default:
+      Serial.println(data[0]);
+      break;
   }
 }
 
@@ -38,6 +51,7 @@ void onUltrasonic(){
    int distance;
    String value;
    
+  digitalWrite(led, HIGH);
   // 초음파를 보낸다. 다 보내면 echo가 HIGH 상태로 대기하게 된다.
   digitalWrite(trigPin, HIGH);
   delay(10);
@@ -53,13 +67,16 @@ void onUltrasonic(){
   //dtostrf(distance, 4, 6, value);
   RFduinoBLE.sendInt(distance);
   // 수정한 값을 출력
-
-  if(distance < 30){
-    Serial.println("Buzzer");
-      digitalWrite(buzzer, HIGH);
-  } else {
-      digitalWrite(buzzer, LOW);
-  }
- 
   delay(300);
+
+}
+
+void onSOS(){
+  Serial.println("sos on");
+   digitalWrite(buzzer, HIGH);
+}  
+
+void offSOS(){
+  Serial.println("sos off");
+   digitalWrite(buzzer, LOW);
 }

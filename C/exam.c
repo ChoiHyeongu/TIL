@@ -6,6 +6,6 @@ int main(){
     a = b = "abcd";
 
     printf("[%s]",b);
-
+    
     return 0;
 }
