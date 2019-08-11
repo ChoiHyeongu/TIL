@@ -6,7 +6,7 @@ int buzzer = 4;
 int isOn = false;
 int echoPin = 14;
 int trigPin = 13; 
-int ultrasonic = 2;
+int ultrasonic = 1;
 void setup() {
 pinMode(led, OUTPUT);   
 pinMode(buzzer, OUTPUT);

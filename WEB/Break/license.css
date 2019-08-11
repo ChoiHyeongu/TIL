@@ -1,0 +1,51 @@
+.license_div{
+  margin-left: 954px;
+  margin-top: 210px;
+}
+
+.license, .bg{
+  position: absolute;
+}
+
+.license {
+  margin-top: 6px;
+  width: 360px;
+  height: 580px;
+  border-radius: 8px;
+  margin-left: 45px;
+  background-color: #f7f7f7;
+  transform: rotate(1deg);
+}
+
+.bg {
+  width: 360px;
+  height: 580px;
+  transform: rotate(-7deg);
+  border-radius: 8px;
+  background-color: #f2f2f2;
+}
+
+.top {
+  float: right;
+  height: 29px;
+  font-family: SpoqaHanSans;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -0.06px;
+  margin-top: 21px;
+  margin-right: 31px;
+  color: #b3b3b3;
+}
+
+.logo {
+  position: absolute;
+  margin-top: 533px;
+  width: 103px;
+  height: 0px;
+  margin-left: 25px;
+  font-family: CenturyGothicPro;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -0.06px;
+  color: #eb124d;
+}
