@@ -10,11 +10,11 @@ int ultraState = 2;
 int pirState = 4;
 int sosState = 6;
 
-int length = 2;                                                                                                // 노래의 총 길이 설정
+int length = 2;     
 
-char notes[] = "af";             // 음계 설정
-char notes2[] = "a"
-int beats[] = {1,1};                                                                                                           // 해당하는 음이 울리는 길이 설정
+char notes[] = "af";
+char notes2[] = "a";
+int beats[] = {1,1};
 int beats2[] = {1};
 
 int tempo = 300;                              
@@ -126,7 +126,7 @@ void onUltrasonic(){
   //dtostrf(distance, 4, 6, value);
   // 수정한 값을 출력
   RFduinoBLE.sendInt(distance);
-  delay(300);
+  delay(2500);
 }
 
 void onPIR(){

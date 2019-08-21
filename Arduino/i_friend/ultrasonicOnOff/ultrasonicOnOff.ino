@@ -1,4 +1,3 @@
-// 스마트폰으로 LED 켜기
 #include <RFduinoBLE.h>  // 블루투스 라이브러리를 사용하기 위해 헤더 파일 추가
 
 int led = 2;    // LED에 연결된 핀을  2번으로 설정 
