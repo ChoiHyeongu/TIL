@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Understud.</title>
+  <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+  <script type="text/javascript">
+    window.onload = ()=> {
+      document.querySelector("#btn").addEventListener("click", ()=> {
+      document.querySelector("#selector").classList.removeClass("welcome");
+      document.querySelector("#selector").classList.addClass("register");
+      })
+    }
+  </script>
+
+  <header id="header" class="header background_white">
+    <div class="wrapper">
+      <h1 class="header_logo">
+        <a href="welcome.html"><span class="header_color">UNDER</span>STUD<span class="header_color">.</span></a>
+      </h1>
+      <nav class="header_nav">
+        <li class="nav_item"><a href="#">about us</a></li>
+        <li class="nav_item"><a href="#">sign in</a></li>
+        <li class="nav_item nav_sign"><a href="register_1.html">sign up</a></li>
+      </nav>
+    </div>
+  </header>
+
+  <div class="content">
+    <div  id="selector" class="welcome">
+      <img class="hero_image" src="picture.png" alt="hero image" width="100%" height="100%">
+      <main id="main" class="main">
+        <div class="container">
+          <div class="welcome">
+            <h2 class="title">배움에 <br>
+            <span class="highlight">정해진 때</span>는 없잖아요</h2>
+            <div class="subtext">시간이 흘러, 이렇게나 발전한 세상이 되었음에도,<br>
+            막상 무언가를 배우고자 하면 어려움이 많을 때가 있습니다.</div>
+            <div class="button">
+              <button id="btn" class="btn_bg">시작 해 볼까요?</button>
+              <button class="btn_join" type="button" name="button">저도 참여하고 싶어요!</button>
+            </div>
+          </div>
+          <div class="register">
+            <h2 class="title">당신은 <br>
+            <span class="highlight">누구</span>인가요?</h2>
+            <div class="subtext">무언가를 시작하기에 앞서, 자신을 아는 것 만큼이나 중요한 것은 없습니다.<br>
+              내가 무엇을 좋아하고, 어떻게 살아왔는지. 자세하게 들여다 볼 때,<br>
+              비로소 자신이 걷고자 하는 길을 찾아낼 수 있을 것 입니다.</div>
+            <div class="button">
+              <button class="btn_bn" type="button" name="button">시작 해 볼까요?</button>
+              <button class="btn_join" type="button" name="button">저도 참여하고 싶어요!</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/js/welcome.js"></script>
+</body>
+
+</html>
