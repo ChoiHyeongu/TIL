@@ -1,49 +1,54 @@
 package com.example.githubapiwithretrofit.presenter;
 
+import android.util.Log;
+
 import com.example.githubapiwithretrofit.activity.MainActivity;
+import com.example.githubapiwithretrofit.model.GithubProfile;
+import com.example.githubapiwithretrofit.util.RetrofitConnection;
+import com.example.githubapiwithretrofit.util.RetrofitInterface;
+
+import org.json.JSONObject;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProfilePresenter implements Presenter.Present{
 
-    Presenter.View mainView;
-    MainActivity mainModel;
+    final String TAG = "ProfilePresenter";
+
+    Presenter.View view;
 
     @Override
-    public void getProfileImage(String username) {
-
+    public void attachView(Presenter.View view) {
+        this.view = view;
     }
 
     @Override
-    public void getUsername(String username) {
-
+    public void detachView() {
+        view = null;
     }
 
     @Override
-    public void getMaxContribution(String username) {
+    public void loadUser() {
 
-    }
+        RetrofitConnection retrofitConnection = RetrofitConnection.getInstance();
+        Call<GithubProfile> call =  retrofitConnection.getServer().getUser();
 
-    @Override
-    public void getTodayContribution(String username) {
+        call.enqueue(new Callback<GithubProfile>() {
+            @Override
+            public void onResponse(Call<GithubProfile> call, Response<GithubProfile> response) {
+                if(response.isSuccessful()){
+                    Log.d(TAG, "onSuccessful");
+                } else {
+                    Log.d(TAG, "onFailure");
+                }
+            }
 
-    }
-
-    @Override
-    public void getRepoCount(String username) {
-
-    }
-
-    @Override
-    public void getFollowers(String username) {
-
-    }
-
-    @Override
-    public void getFollwing(String username) {
-
-    }
-
-    @Override
-    public void setBio(String username) {
-
+            @Override
+            public void onFailure(Call<GithubProfile> call, Throwable t) {
+                Log.d(TAG, "onFailure : " + t.toString());
+            }
+        });
     }
 }
