@@ -1,12 +1,26 @@
 package com.example.githubapiwithretrofit.presenter;
 
-public interface ProfilePresenter {
+public interface Presenter {
 
     interface View{
-
+        void setProfileImage();
+        void setUsername();
+        void setMaxContribution();
+        void setTodayContribution();
+        void setRepoCount();
+        void setFollowers();
+        void setFollwing();
+        void setBio();
     }
 
-    interface Presente{
-
+    interface Present{
+        void getProfileImage(String username);
+        void getUsername(String username);
+        void getMaxContribution(String username);
+        void getTodayContribution(String username);
+        void getRepoCount(String username);
+        void getFollowers(String username);
+        void getFollwing(String username);
+        void setBio(String username);
     }
 }
