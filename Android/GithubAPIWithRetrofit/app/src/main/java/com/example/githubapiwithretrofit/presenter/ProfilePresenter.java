@@ -39,7 +39,7 @@ public class ProfilePresenter implements Presenter.Present{
             @Override
             public void onResponse(Call<GithubProfile> call, Response<GithubProfile> response) {
                 if(response.isSuccessful()){
-                    Log.d(TAG, "onSuccessful");
+                    Log.d(TAG, "onSuccessful : " + response.body().toString());
                 } else {
                     Log.d(TAG, "onFailure");
                 }
