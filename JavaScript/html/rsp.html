@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+    var userInput = prompt("가위1 바위2 보3 ", "");
+    var comInput = Math.ceil(Math.random()*3);
+
+    if(userInput == comInput){
+      document.write("맞춤");
+    } else {
+      document.write("틀림");
+    }
+
+    document.write(userInput + ", " + comInput);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
