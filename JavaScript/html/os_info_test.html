@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+    function info1() {
+      var os = navigator.userAgent.toLowerCase();
+      var info_wrap = document.getElementById("info_wrap");
+
+      if (os.indexOf('windows') >= 0) {
+        info_wrap.innerHTML = "윈도우";
+      }
+    }
+
+    function info2() {
+      var sc_width = screen.width;
+      var sc_height = screen.height;
+
+      var info_wrap = document.getElementById("info_wrap");
+      info_wrap.innerHTML = sc_width + "X" + sc_height;
+
+
+      setTimeout("info_wrap.innerHTML=''", 1000);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>OS, Screen info</h1>
+  <p id="info_wrap"></p>
+
+  <button type="button" onclick="info1()" name="button">OS Info</button> <br>
+  <button type="button" onclick="info2()" name="button">Screen Info</button>
+
+</body>
+
+</html>

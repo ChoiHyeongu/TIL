@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+    var num = ["사당", "교대", "방배", "강남"];
+
+    document.write(num, "<br>");
+    document.write(typeof num, "<br>");
+    document.write(num.join("-"), "<br>");
+    document.write(typeof num.join("-"), "<br>");
+    document.write(num.reverse(), "<br>");
+    document.write(num.sort(), "<br>");
+
+    var greenLine = ["사당", "교대", "방배", "강남"];
+    var yellowLine = ["미금", "정자", "모란", "수서"];
+
+    greenLine.splice(2, 1, "서초", "역삼");
+    document.write(greenLine, "<br>");
+    document.write(greenLine.slice(1,3), "<br>");
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
