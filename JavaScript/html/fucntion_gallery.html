@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+    window.onload = function() {
+      var list_zone = document.getElementById("inner_list");
+      var list_a = list_zone.getElementByTagName("a");
+
+      for (var i = 0; i < list_a.length; i++) {
+        list_a[i].onclick=function(){
+          var ph=document.getElementById("photo").children[0];
+          ph.src=this.href;
+          return false;
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
