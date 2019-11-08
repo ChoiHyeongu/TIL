@@ -8,21 +8,22 @@ calMax = dCal
 pMax = 0
 cases=[]
 result = 0
+k=0
 
 for i in range(n):
     tCal.append(int(input()))
 
 tCal.sort()
-print (tCal)
-
-k=0
+cases.append(math.floor(dCal/dPrice))
 
 for i in range(n):
-    j = i
-    for j in range(n-1, j):
+    for j in range(n-i):
+        j+=i
         calMax += tCal[j]
+        pMax = dPrice + (tPrice * (j-i+1))
+        cases.append(math.floor(calMax/pMax))
     
-    result = math.floor(calMax/(dPrice+i*tPrice))
-    cases.append(result)
+    calMax = dCal
+    pMax = 0
 
-print (cases)
+print (max(cases))
